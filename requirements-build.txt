@@ -1,0 +1,3 @@
+# Build tools only. Install into the project's .venv, never the system Python.
+PyInstaller==6.22.3
+pyinstaller-hooks-contrib==2026.9

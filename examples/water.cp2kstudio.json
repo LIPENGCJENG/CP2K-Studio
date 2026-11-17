@@ -1,0 +1,102 @@
+{
+  "format_version": 1,
+  "cp2k_version": "2026.1",
+  "global_settings": {
+    "project_name": "water_demo",
+    "run_type": "ENERGY",
+    "print_level": "LOW"
+  },
+  "dft": {
+    "charge": 0,
+    "multiplicity": 1,
+    "uks": false,
+    "xc_functional": "PBE",
+    "basis_files": [
+      "BASIS_MOLOPT"
+    ],
+    "potential_file": "GTH_POTENTIALS",
+    "cutoff": 400.0,
+    "rel_cutoff": 50.0,
+    "ngrids": 4,
+    "eps_default": 1e-10,
+    "poisson_solver": "PERIODIC",
+    "scf": {
+      "method": "OT",
+      "eps_scf": 1e-6,
+      "max_scf": 100,
+      "guess": "ATOMIC",
+      "minimizer": "CG",
+      "preconditioner": "FULL_ALL",
+      "outer_scf": false,
+      "outer_max_scf": 10,
+      "diagonalization": "STANDARD",
+      "mixing_method": "BROYDEN_MIXING",
+      "mixing_alpha": 0.4,
+      "added_mos": 0,
+      "smearing": false,
+      "electronic_temperature": 300.0
+    }
+  },
+  "structure": {
+    "symbols": [
+      "O",
+      "H",
+      "H"
+    ],
+    "positions": [
+      [
+        0.0,
+        0.0,
+        -0.065587
+      ],
+      [
+        0.0,
+        -0.757136,
+        0.520545
+      ],
+      [
+        0.0,
+        0.757136,
+        0.520545
+      ]
+    ],
+    "cell": [
+      [
+        6.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        6.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        6.0
+      ]
+    ],
+    "periodic": "XYZ",
+    "source": null
+  },
+  "kinds": {
+    "H": {
+      "basis_set": "DZVP-MOLOPT-GTH",
+      "potential": "GTH-PBE-q1"
+    },
+    "O": {
+      "basis_set": "DZVP-MOLOPT-GTH",
+      "potential": "GTH-PBE-q6"
+    }
+  },
+  "motion": {
+    "optimizer": "BFGS",
+    "max_iter": 200,
+    "max_force": 0.00045,
+    "rms_force": 0.0003,
+    "max_dr": 0.003,
+    "rms_dr": 0.0015
+  },
+  "xml_spec": null
+}

@@ -1,0 +1,3 @@
+# Only workflow settings; structure, charge, multiplicity and basis remain unset.
+global_settings:
+  run_type: ENERGY

@@ -1,0 +1,6 @@
+# Does not supply chemistry or claim convergence for a particular system.
+global_settings:
+  run_type: GEO_OPT
+motion:
+  optimizer: BFGS
+  max_iter: 200

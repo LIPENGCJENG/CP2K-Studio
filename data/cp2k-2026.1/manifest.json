@@ -1,0 +1,48 @@
+{
+  "cp2k_version": "2026.1",
+  "ref": "v2026.1",
+  "commit": "757bb76a80be37bef49d7383b4f7fce122940895",
+  "source": "https://github.com/cp2k/cp2k",
+  "files": {
+    "BASIS_MOLOPT": {
+      "sha256": "686dd72e7601ee41d4a173e4c7c3946f1e750f03095090f44d3821c180a81a61",
+      "url": "https://raw.githubusercontent.com/cp2k/cp2k/757bb76a80be37bef49d7383b4f7fce122940895/data/BASIS_MOLOPT",
+      "kind": "basis"
+    },
+    "BASIS_MOLOPT_UCL": {
+      "sha256": "71789c403362b4072f47e7ebb8cbc89e215a3eda5d54059ead597cebf965e413",
+      "url": "https://raw.githubusercontent.com/cp2k/cp2k/757bb76a80be37bef49d7383b4f7fce122940895/data/BASIS_MOLOPT_UCL",
+      "kind": "basis"
+    },
+    "BASIS_MOLOPT_UZH": {
+      "sha256": "a6080c830d778654ed6765cc672e1aa75ace02c20dbdf30b27080180e642fea7",
+      "url": "https://raw.githubusercontent.com/cp2k/cp2k/757bb76a80be37bef49d7383b4f7fce122940895/data/BASIS_MOLOPT_UZH",
+      "kind": "basis"
+    },
+    "POTENTIAL": {
+      "sha256": "b0e5adf52fc7b7dcf3f2d156ae3f1327780f6f4d11973db329545e5c73bdc361",
+      "url": "https://raw.githubusercontent.com/cp2k/cp2k/757bb76a80be37bef49d7383b4f7fce122940895/data/POTENTIAL",
+      "kind": "potential"
+    },
+    "GTH_POTENTIALS": {
+      "sha256": "5a9bfbc3b37a55917ade4fb704b80546d210d843759b94e3915e74acfc3fafb2",
+      "url": "https://raw.githubusercontent.com/cp2k/cp2k/757bb76a80be37bef49d7383b4f7fce122940895/data/GTH_POTENTIALS",
+      "kind": "potential"
+    },
+    "POTENTIAL_UZH": {
+      "sha256": "7fd6942a627c7d1a897d938e198ea3c930630ac98d3e7099426bd83596c6b763",
+      "url": "https://raw.githubusercontent.com/cp2k/cp2k/757bb76a80be37bef49d7383b4f7fce122940895/data/POTENTIAL_UZH",
+      "kind": "potential"
+    },
+    "BASIS_SET": {
+      "sha256": "1d60d67ad5f22253185fda9d27b23558521e04a2b0c5efabaf44a33fe2208182",
+      "url": "https://raw.githubusercontent.com/cp2k/cp2k/757bb76a80be37bef49d7383b4f7fce122940895/data/BASIS_SET",
+      "kind": "basis"
+    },
+    "GTH_BASIS_SETS": {
+      "sha256": "76d1ccd5204390abfcadeb5c0d5e609ff3d151c1c1a583a02349af348ef919f7",
+      "url": "https://raw.githubusercontent.com/cp2k/cp2k/757bb76a80be37bef49d7383b4f7fce122940895/data/GTH_BASIS_SETS",
+      "kind": "basis"
+    }
+  }
+}
