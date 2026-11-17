@@ -1,5 +1,6 @@
 """CELL_OPT syntax, scope, independent state and final exported artifacts."""
 import json
+from io import TextIOWrapper
 from pathlib import Path
 import zipfile
 import numpy as np
@@ -220,8 +221,13 @@ def test_comprehensive_check_standalone_and_final_zip_keep_requested_input(cryst
     destination = export_bundle(crystal, tmp_path / 'cell.zip', archive=True)
     with zipfile.ZipFile(destination) as archive:
         assert {'input.inp','structure.xyz','run.sh','EXPORT_NOTES.txt','project.cp2kstudio.json'} <= set(archive.namelist())
-        text = archive.read('input.inp').decode()
-        tree = validator.parse(text).tree
+        # Match Path.read_text's universal-newline behavior. Windows exports
+        # may use CRLF, while the XML parser expects logical text lines.
+        with TextIOWrapper(archive.open('input.inp'), encoding='utf-8') as stream:
+            text = stream.read()
+        parsed = validator.parse(text)
+        assert parsed.ok, parsed.errors
+        tree = parsed.tree
         assert 'type' not in tree['+motion']['+cell_opt']
         assert tree['+motion']['+cell_opt']['external_pressure'] == 0
         assert 'COORD_FILE_NAME structure.xyz' in text
