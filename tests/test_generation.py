@@ -76,5 +76,7 @@ def test_golden_input(water, method):
     if method == 'DIAGONALIZATION':
         water.global_settings.run_type = 'GEO_OPT'
     expected = Path(__file__).parent/'fixtures'/f'generated_{method.lower()}.inp'
-    normalized=generate_input(water).replace(str(BUNDLED_DATA)+'/', '')
-    assert normalized == expected.read_text()
+    # The generator emits POSIX separators even when BUNDLED_DATA is a
+    # WindowsPath. Remove only that known library prefix, not INP content.
+    normalized = generate_input(water).replace(BUNDLED_DATA.as_posix() + '/', '')
+    assert normalized == expected.read_text(encoding='utf-8')

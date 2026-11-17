@@ -48,11 +48,14 @@ def test_export_validates_and_preserves_coordinates(water, tmp_path, validator):
 def test_export_copies_colliding_resource_names(water, tmp_path, validator):
     sources = []
     from core.database_manager import BUNDLED_DATA
-    for name, text in [('a',(BUNDLED_DATA/'BASIS_MOLOPT').read_text()), ('b',(BUNDLED_DATA/'GTH_POTENTIALS').read_text())]:
+    for name, original in [('a', BUNDLED_DATA/'BASIS_MOLOPT'), ('b', BUNDLED_DATA/'GTH_POTENTIALS')]:
         folder = tmp_path/name
         folder.mkdir()
         source = folder/'same library'
-        source.write_text(text)
+        # Official provenance uses file bytes; text IO would turn LF into
+        # CRLF on Windows and invalidate an otherwise identical database.
+        source.write_bytes(original.read_bytes())
+        assert source.read_bytes() == original.read_bytes()
         sources.append(str(source))
     water.dft.basis_files = [sources[0], sources[0]]
     water.dft.potential_file = sources[1]
@@ -63,7 +66,12 @@ def test_export_copies_colliding_resource_names(water, tmp_path, validator):
     reopened = load_project(dest/'project.cp2kstudio.json')
     assert all(Path(p).is_file() for p in reopened.dft.basis_files)
     assert len(reopened.dft.basis_files)==1  # references are de-duplicated
-    assert Path(reopened.dft.potential_file).read_text() == (BUNDLED_DATA/'GTH_POTENTIALS').read_text()
+    assert Path(reopened.dft.basis_files[0]).read_bytes() == (BUNDLED_DATA/'BASIS_MOLOPT').read_bytes()
+    assert Path(reopened.dft.potential_file).read_bytes() == (BUNDLED_DATA/'GTH_POTENTIALS').read_bytes()
+    from core.validator import validate_project
+    from core.file_references import check_generated_dependencies
+    assert validate_project(reopened).ok
+    assert not check_generated_dependencies(path.read_text(encoding='utf-8'), dest, require_relative=True)
 
 
 def test_invalid_export_leaves_no_files(tmp_path):
