@@ -29,6 +29,15 @@ def load_application_icon(path: str | Path | None = None) -> QIcon:
 
 def set_application_icon(app: QApplication) -> QIcon:
     """One application default is inherited by applicable child windows/dialogs."""
+    import sys
+    if sys.platform == 'win32':
+        # Stable taskbar identity, independent of the Python host's icon.
+        try:
+            import ctypes
+            from core.app_info import BUNDLE_IDENTIFIER
+            ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(BUNDLE_IDENTIFIER)
+        except (AttributeError, OSError):
+            logger.warning('Windows taskbar application identity could not be set')
     icon = load_application_icon()
     if not icon.isNull():
         app.setWindowIcon(icon)

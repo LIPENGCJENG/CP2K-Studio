@@ -5,3 +5,23 @@ __pycache__/
 .DS_Store
 dist/
 build/
+
+# Local credentials, user projects and calculation results (fixtures stay tracked).
+.env
+.env.*
+!.env.example
+*.pem
+*.p12
+*.pfx
+*.key
+.coverage
+htmlcov/
+local-config.*
+*.cp2kstudio.json
+!examples/*.cp2kstudio.json
+output.out
+*.wfn
+*.restart
+*.restart.bak*
+*-pos-*.xyz
+*-frc-*.xyz

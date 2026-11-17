@@ -8,6 +8,7 @@ from datetime import datetime, timezone
 from importlib import metadata
 from pathlib import Path
 from core.resources import resource_path, external_environment
+from core.windows_executable import is_native_windows_program
 import os
 import platform
 import re
@@ -173,7 +174,7 @@ def find_cp2k(environ=None, system=None, *, directories=None, known_paths=()):
         paths.extend(Path(p).expanduser() for p in known_paths if Path(p).name.lower() in {name, name+'.exe'})
         for path in paths:
             try:
-                if path.is_file() and os.access(path, os.X_OK):
+                if path.is_file() and os.access(path, os.X_OK) and (system != 'Windows' or is_native_windows_program(path)):
                     path = path.absolute()
                     # Keep symlink aliases visible, but avoid repeated identical paths.
                     if str(path) not in real_paths:
@@ -184,7 +185,8 @@ def find_cp2k(environ=None, system=None, *, directories=None, known_paths=()):
     for value in explicit:
         try:
             path=Path(value).expanduser().absolute()
-            if path.is_file() and os.access(path,os.X_OK) and str(path) not in real_paths:
+            if (path.is_file() and os.access(path,os.X_OK) and str(path) not in real_paths
+                    and (system != 'Windows' or is_native_windows_program(path))):
                 real_paths.add(str(path));found.append(path)
         except (OSError,ValueError):pass
     return found
@@ -462,7 +464,7 @@ class EnvironmentDetector:
             return
         self.selected=paths[0]
         report.items.append(CheckItem('cp2k','cp2k.selected',i18n_msg('Current Detection Target',code='env.selected'),'pass',str(self.selected)))
-        if not any(shutil.which(name, path=self.environ.get('PATH', '')) for name in EXECUTABLES):
+        if self.system == 'Darwin' and not any(shutil.which(name, path=self.environ.get('PATH', '')) for name in EXECUTABLES):
             report.items.append(CheckItem('cp2k', 'cp2k.off_path',
                 i18n_msg('GUI PATH', code='env.gui_path'), 'warning',
                 i18n_msg('CP2K was found outside the GUI PATH. Finder and Terminal may have different environments. Configure the target terminal before Local Run; Studio did not modify PATH.', code='env.off_path')))
@@ -497,10 +499,14 @@ class EnvironmentDetector:
 
     def _mpi(self, report):
         launcher=shutil.which('mpirun',path=self.environ.get('PATH','')) or shutil.which('mpiexec',path=self.environ.get('PATH',''))
+        if launcher and self.system == 'Windows' and not is_native_windows_program(launcher):
+            launcher = None
         if not launcher:
             folders=candidate_directories(self.environ,self.system) if self.directories is None else self.directories
             for folder in folders:
-                launcher=next((str(folder/name) for name in ['mpirun','mpiexec'] if (folder/name).is_file() and os.access(folder/name,os.X_OK)),None)
+                names = ['mpirun.exe', 'mpiexec.exe'] if self.system == 'Windows' else ['mpirun','mpiexec']
+                launcher=next((str(folder/name) for name in names if (folder/name).is_file() and os.access(folder/name,os.X_OK)
+                               and (self.system != 'Windows' or is_native_windows_program(folder/name))),None)
                 if launcher:break
         if not launcher:
             report.items.append(CheckItem('mpi','mpi.launcher',i18n_msg('MPI Runtime',code='env.mpi'),'warning',i18n_msg('mpirun / mpiexec not found.',code='env.mpi_missing')))

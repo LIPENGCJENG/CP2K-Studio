@@ -8,6 +8,7 @@ from i18n.messages import i18n_msg, i18n_join
 from dataclasses import dataclass
 from pathlib import Path
 import re
+import sys
 
 
 FILE_KEYWORDS = {
@@ -28,8 +29,11 @@ def serialize_file_reference(value, keyword):
     # requiring quoting/preprocessing or ambiguous whitespace normalization.
     # Do not strip or expand a value after checking: its literal spelling is
     # also what the final dependency checker must open.
+    # Windows user/OneDrive folders may contain Unicode letters and digits.
+    # Keep separators/metacharacter restrictions and all POSIX behavior intact.
+    path_pattern = r'[\w./: -]+' if sys.platform == 'win32' else r'[A-Za-z0-9_./: -]+'
     if (not isinstance(value, str) or not value or value != value.strip()
-            or '  ' in value or not re.fullmatch(r'[A-Za-z0-9_./: -]+', value)):
+            or '  ' in value or not re.fullmatch(path_pattern, value)):
         raise FileReferenceError(i18n_msg('{p0}: path cannot be safely written directly into CP2K INP: {p1!r}. Export a complete package to normalize filenames, or rename the source file first.', code='studio.56ceeae123ffa617', p0=keyword, p1=value))
     return value
 

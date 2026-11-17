@@ -1,0 +1,5 @@
+# Windows-only build tools; keep the macOS build environment unchanged.
+-r requirements-build.txt
+Pillow==12.0.0
+# Keep Windows 10 support stable instead of drifting to a future Qt release.
+PySide6==6.12.0

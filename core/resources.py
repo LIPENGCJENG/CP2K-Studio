@@ -25,18 +25,21 @@ def relocated_database(path, sha256):
     if original.is_file() or not sha256:
         return None
     parts = original.parts
+    candidates = []
     for index, part in enumerate(parts):
-        if not part.endswith('.app'):
-            continue
         tail = parts[index + 1:]
-        if (len(tail) == 5 and tail[0] == 'Contents'
+        if (part.endswith('.app') and len(tail) == 5 and tail[0] == 'Contents'
                 and tail[1] in {'Resources', 'Frameworks'} and tail[2:4] == ('data', 'cp2k-2026.1')):
-            current = resource_path(*tail[2:])
-            try:
-                if current.is_file() and hashlib.sha256(current.read_bytes()).hexdigest() == sha256:
-                    return str(current.resolve())
-            except OSError:
-                pass
+            candidates.append(tail[2:])
+        elif part == '_internal' and len(tail) == 3 and tail[:2] == ('data', 'cp2k-2026.1'):
+            candidates.append(tail)
+    for tail in candidates:
+        current = resource_path(*tail)
+        try:
+            if current.is_file() and hashlib.sha256(current.read_bytes()).hexdigest() == sha256:
+                return str(current.resolve())
+        except OSError:
+            pass
     return None
 
 

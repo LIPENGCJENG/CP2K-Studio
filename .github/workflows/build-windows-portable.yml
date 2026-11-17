@@ -1,0 +1,64 @@
+name: Build CP2K Studio Windows Portable
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  portable:
+    runs-on: windows-2025
+    timeout-minutes: 40
+    defaults:
+      run:
+        shell: pwsh
+    env:
+      PYTHONUTF8: '1'
+      QT_QPA_PLATFORM: offscreen
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1, Node 24
+        with:
+          persist-credentials: false
+      - name: Set up Python 3.12 x64
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0, Node 24
+        with:
+          python-version: '3.12'
+          architecture: x64
+          cache: pip
+          cache-dependency-path: |
+            requirements.txt
+            requirements-build.txt
+            requirements-build-win.txt
+      - name: Print runner environment
+        run: |
+          Write-Host "Runner: $env:RUNNER_OS / $env:RUNNER_ARCH / $env:ImageOS / $env:ImageVersion"
+          python -c "import platform,sys; print(platform.platform(), platform.machine(), sys.version)"
+          if ($LASTEXITCODE -ne 0) { throw 'Python environment check failed' }
+      - name: Install runtime dependencies
+        run: |
+          python -m pip install -r requirements.txt -c requirements-build-win.txt
+          if ($LASTEXITCODE -ne 0) { throw 'Runtime dependency installation failed' }
+      - name: Install Windows build dependencies
+        run: |
+          python -m pip install -r requirements-build-win.txt
+          if ($LASTEXITCODE -ne 0) { throw 'Build dependency installation failed' }
+          python -m pip check
+          if ($LASTEXITCODE -ne 0) { throw 'Dependency conflict' }
+      - name: Run core and Windows compatibility tests
+        run: |
+          python scripts/test_windows_core.py
+          if ($LASTEXITCODE -ne 0) { throw 'Required tests failed' }
+      - name: Build, smoke-test and verify portable ZIP
+        run: ./build_windows.ps1
+      - name: Upload verified portable package
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2, Node 24
+        with:
+          name: CP2K-Studio-v1.0-Windows-x64-Portable
+          path: |
+            dist/CP2K_Studio_v1.0_Windows_x64_Portable.zip
+            dist/SHA256SUMS.txt
+          if-no-files-found: error
+          retention-days: 14
+          compression-level: 0

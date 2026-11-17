@@ -12,6 +12,8 @@ SCF 的 OT 参数支持可选 [ENERGY_GAP](docs/ot-energy-gap.md)，默认 Auto�
 
 ## 安装与启动
 
+Windows x64 免安装版可通过 GitHub **Actions → Build CP2K Studio Windows Portable → Run workflow** 手动构建。成功后在 Artifacts 下载 `CP2K-Studio-v1.0-Windows-x64-Portable`，取出其中的 `CP2K_Studio_v1.0_Windows_x64_Portable.zip`，完整解压后双击 `CP2K Studio.exe`。无需 Python，实际 CP2K/MPI 仍需单独配置；详细步骤及验证范围见 [Windows 构建说明](docs/WINDOWS_BUILD.md)。
+
 需要 **Python 3.10 或更新版本**，推荐 Python 3.12。CP2K 本体不是启动依赖。
 
 macOS / Linux：

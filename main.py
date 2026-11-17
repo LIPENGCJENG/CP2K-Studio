@@ -4,6 +4,9 @@ import sys
 
 def main():
     from core.app_info import APP_NAME, APP_VERSION
+    if len(sys.argv) == 3 and sys.argv[1] == '--windows-smoke-test':
+        from scripts.windows_smoke import run
+        return run(sys.argv[2])
     if len(sys.argv) == 3 and sys.argv[1] == '--packaging-smoke-test':
         from scripts.macos_smoke import run
         return run(sys.argv[2])
