@@ -139,31 +139,31 @@ def catalog_sources():
         QCoreApplication.translate("CP2KStudio", 'DFT / SURFACE_DIPOLE_CORRECTION: review compatibility with POISSON_SOLVER {solver}. The standard 3D periodic slab workflow uses PERIODIC; Studio has not changed the solver.', 'dipole.solver_info'),
         # ui/dft_panel.py:46
         QCoreApplication.translate("CP2KStudio", 'Surface Dipole Correction', 'dipole.title'),
-        # core/environment_check.py:556
+        # core/environment_check.py:571
         QCoreApplication.translate("CP2KStudio", 'Architecture', 'env.architecture'),
-        # core/environment_check.py:558
+        # core/environment_check.py:573
         QCoreApplication.translate("CP2KStudio", 'Available Logical Cores (OS / affinity)', 'env.available_cores'),
-        # core/environment_check.py:560
+        # core/environment_check.py:575
         QCoreApplication.translate("CP2KStudio", 'Available Memory', 'env.available_memory'),
-        # core/environment_check.py:495
+        # core/environment_check.py:506
         QCoreApplication.translate("CP2KStudio", 'Build Type', 'env.build'),
-        # core/environment_check.py:492
+        # core/environment_check.py:503
         QCoreApplication.translate("CP2KStudio", 'MPI', 'env.build_mpi'),
-        # core/environment_check.py:491
+        # core/environment_check.py:502
         QCoreApplication.translate("CP2KStudio", 'MPI + OpenMP', 'env.build_mpi_omp'),
-        # core/environment_check.py:494
+        # core/environment_check.py:505
         QCoreApplication.translate("CP2KStudio", 'Serial', 'env.build_serial'),
-        # core/environment_check.py:493
+        # core/environment_check.py:504
         QCoreApplication.translate("CP2KStudio", 'Serial + OpenMP', 'env.build_serial_omp'),
-        # core/environment_check.py:211
+        # core/environment_check.py:216
         QCoreApplication.translate("CP2KStudio", 'Build capabilities are not reported.', 'env.build_unknown'),
         # ui/environment_dialog.py:13
         QCoreApplication.translate("CP2KStudio", 'Environment Check', 'env.button'),
-        # core/environment_check.py:426
+        # core/environment_check.py:431
         QCoreApplication.translate("CP2KStudio", 'Cancelled', 'env.cancelled'),
-        # core/environment_check.py:452
+        # core/environment_check.py:463
         QCoreApplication.translate("CP2KStudio", 'This check could not be completed; other checks continue.', 'env.check_failed'),
-        # core/environment_check.py:73
+        # core/environment_check.py:74
         QCoreApplication.translate("CP2KStudio", 'Checked at: {time}', 'env.checked_at'),
         # ui/environment_dialog.py:97
         QCoreApplication.translate("CP2KStudio", 'Checking environment…', 'env.checking'),
@@ -173,165 +173,165 @@ def catalog_sources():
         QCoreApplication.translate("CP2KStudio", 'Report copied to clipboard.', 'env.copied'),
         # ui/environment_dialog.py:74
         QCoreApplication.translate("CP2KStudio", 'Copy Report', 'env.copy'),
-        # core/environment_check.py:461
+        # core/environment_check.py:472
         QCoreApplication.translate("CP2KStudio", 'CP2K Not Found', 'env.cp2k_missing'),
-        # core/environment_check.py:486
+        # core/environment_check.py:497
         QCoreApplication.translate("CP2KStudio", 'CP2K Version', 'env.cp2k_version'),
-        # core/environment_check.py:557
+        # core/environment_check.py:572
         QCoreApplication.translate("CP2KStudio", 'CPU', 'env.cpu'),
-        # core/environment_check.py:559
+        # core/environment_check.py:574
         QCoreApplication.translate("CP2KStudio", 'Known CPU Capacity (OS / affinity / quota)', 'env.cpu_capacity'),
-        # core/environment_check.py:460
+        # core/environment_check.py:471
         QCoreApplication.translate("CP2KStudio", 'Executable', 'env.executable'),
-        # core/environment_check.py:424
+        # core/environment_check.py:429
         QCoreApplication.translate("CP2KStudio", 'Exit code {exitcode}', 'env.exit_code'),
-        # core/environment_check.py:496
+        # core/environment_check.py:507
         QCoreApplication.translate("CP2KStudio", 'Reported Features', 'env.features'),
-        # core/environment_check.py:496
+        # core/environment_check.py:507
         QCoreApplication.translate("CP2KStudio", 'Not reported; no features were assumed.', 'env.features_unknown'),
         # ui/environment_dialog.py:128
         QCoreApplication.translate("CP2KStudio", 'Inspection finished. No calculation was run.', 'env.finished'),
-        # core/environment_check.py:27
-        QCoreApplication.translate("CP2KStudio", 'CP2K Installation', 'env.group_cp2k'),
-        # core/environment_check.py:29
-        QCoreApplication.translate("CP2KStudio", 'Runtime & Scientific Libraries', 'env.group_libraries'),
         # core/environment_check.py:28
-        QCoreApplication.translate("CP2KStudio", 'MPI Environment', 'env.group_mpi'),
+        QCoreApplication.translate("CP2KStudio", 'CP2K Installation', 'env.group_cp2k'),
         # core/environment_check.py:30
-        QCoreApplication.translate("CP2KStudio", 'Python Dependencies', 'env.group_python'),
+        QCoreApplication.translate("CP2KStudio", 'Runtime & Scientific Libraries', 'env.group_libraries'),
+        # core/environment_check.py:29
+        QCoreApplication.translate("CP2KStudio", 'MPI Environment', 'env.group_mpi'),
         # core/environment_check.py:31
+        QCoreApplication.translate("CP2KStudio", 'Python Dependencies', 'env.group_python'),
+        # core/environment_check.py:32
         QCoreApplication.translate("CP2KStudio", 'System Information', 'env.group_system'),
-        # core/environment_check.py:467
+        # core/environment_check.py:478
         QCoreApplication.translate("CP2KStudio", 'GUI PATH', 'env.gui_path'),
-        # core/environment_check.py:564
+        # core/environment_check.py:579
         QCoreApplication.translate("CP2KStudio", 'Host / VM Available Memory', 'env.host_available_memory'),
-        # core/environment_check.py:563
+        # core/environment_check.py:578
         QCoreApplication.translate("CP2KStudio", 'Host / VM Total Memory', 'env.host_memory'),
-        # core/environment_check.py:565
+        # core/environment_check.py:580
         QCoreApplication.translate("CP2KStudio", 'Host / VM Memory Usage', 'env.host_memory_percent'),
-        # core/environment_check.py:551
+        # core/environment_check.py:566
         QCoreApplication.translate("CP2KStudio", 'Installed', 'env.installed'),
-        # core/environment_check.py:35
-        QCoreApplication.translate("CP2KStudio", 'Issues Detected', 'env.issues'),
-        # core/environment_check.py:541
-        QCoreApplication.translate("CP2KStudio", 'Runtime Library', 'env.library'),
-        # core/environment_check.py:542
-        QCoreApplication.translate("CP2KStudio", 'Only observed dynamic links are listed. Missing names do not prove absent static libraries or disabled optional features. macOS shared-cache, transitive and late-loaded libraries may remain unverified.', 'env.library_scope'),
-        # core/environment_check.py:387
-        QCoreApplication.translate("CP2KStudio", 'Dependency inspection did not complete successfully ({status}).', 'env.linker_failed'),
-        # core/environment_check.py:381
-        QCoreApplication.translate("CP2KStudio", 'The platform dependency inspection tool is unavailable.', 'env.linker_missing'),
-        # core/environment_check.py:558
-        QCoreApplication.translate("CP2KStudio", 'Logical Cores', 'env.logical'),
-        # core/environment_check.py:560
-        QCoreApplication.translate("CP2KStudio", 'Total Memory', 'env.memory'),
-        # core/environment_check.py:566
-        QCoreApplication.translate("CP2KStudio", 'Container Memory Headroom (conservative estimate)', 'env.memory_headroom'),
-        # core/environment_check.py:566
-        QCoreApplication.translate("CP2KStudio", 'Container Memory Limit', 'env.memory_limit'),
-        # core/environment_check.py:561
-        QCoreApplication.translate("CP2KStudio", 'Memory Usage', 'env.memory_percent'),
-        # core/environment_check.py:551
-        QCoreApplication.translate("CP2KStudio", 'Version Mismatch', 'env.mismatch'),
-        # core/environment_check.py:551
-        QCoreApplication.translate("CP2KStudio", 'Missing', 'env.missing'),
-        # core/environment_check.py:461
-        QCoreApplication.translate("CP2KStudio", 'Check installation and the GUI process PATH. Common platform installation and current Python/Conda locations were also checked. Input generation remains available.', 'env.missing_note'),
-        # core/environment_check.py:521
-        QCoreApplication.translate("CP2KStudio", 'MPI Runtime', 'env.mpi'),
-        # core/environment_check.py:527
-        QCoreApplication.translate("CP2KStudio", 'Launcher presence does not verify ABI compatibility with CP2K. No MPI job was launched.', 'env.mpi_abi'),
-        # core/environment_check.py:527
-        QCoreApplication.translate("CP2KStudio", 'Configured MPI Compatibility', 'env.mpi_compatibility'),
-        # core/environment_check.py:506
-        QCoreApplication.translate("CP2KStudio", 'mpirun / mpiexec not found.', 'env.mpi_missing'),
-        # core/environment_check.py:521
-        QCoreApplication.translate("CP2KStudio", 'Unknown implementation/version', 'env.mpi_unknown'),
-        # core/environment_check.py:536
-        QCoreApplication.translate("CP2KStudio", 'No CP2K executable is available to inspect.', 'env.no_library_target'),
-        # core/environment_check.py:539
-        QCoreApplication.translate("CP2KStudio", 'No resolvable dynamic links were reported.', 'env.no_links'),
         # core/environment_check.py:36
-        QCoreApplication.translate("CP2KStudio", 'CP2K Not Installed', 'env.not_installed'),
-        # core/environment_check.py:427
-        QCoreApplication.translate("CP2KStudio", 'Not probed within the time budget', 'env.not_probed'),
-        # core/environment_check.py:532
-        QCoreApplication.translate("CP2KStudio", 'Not set', 'env.not_set'),
-        # core/environment_check.py:468
-        QCoreApplication.translate("CP2KStudio", 'CP2K was found outside the GUI PATH. Finder and Terminal may have different environments. Configure the target terminal before Local Run; Studio did not modify PATH.', 'env.off_path'),
-        # core/environment_check.py:532
-        QCoreApplication.translate("CP2KStudio", 'Invalid OpenMP thread-count value (not copied).', 'env.omp_invalid'),
-        # core/environment_check.py:549
-        QCoreApplication.translate("CP2KStudio", 'Optional', 'env.optional'),
-        # core/environment_check.py:542
-        QCoreApplication.translate("CP2KStudio", 'Optional / Static Scientific Libraries', 'env.optional_libraries'),
+        QCoreApplication.translate("CP2KStudio", 'Issues Detected', 'env.issues'),
         # core/environment_check.py:556
-        QCoreApplication.translate("CP2KStudio", 'Operating System', 'env.os'),
-        # core/environment_check.py:429
-        QCoreApplication.translate("CP2KStudio", 'Output limit exceeded', 'env.output_limit'),
-        # core/environment_check.py:552
-        QCoreApplication.translate("CP2KStudio", '{name} · {kind}', 'env.package_label'),
-        # core/environment_check.py:552
-        QCoreApplication.translate("CP2KStudio", '{state}; installed: {version}; required: {specifier}', 'env.package_value'),
-        # core/environment_check.py:308
-        QCoreApplication.translate("CP2KStudio", 'The packaging library is unavailable; requirements cannot be evaluated.', 'env.packaging_missing'),
-        # core/environment_check.py:37
-        QCoreApplication.translate("CP2KStudio", 'Partially Verified', 'env.partial'),
+        QCoreApplication.translate("CP2KStudio", 'Runtime Library', 'env.library'),
         # core/environment_check.py:557
+        QCoreApplication.translate("CP2KStudio", 'Only observed dynamic links are listed. Missing names do not prove absent static libraries or disabled optional features. macOS shared-cache, transitive and late-loaded libraries may remain unverified.', 'env.library_scope'),
+        # core/environment_check.py:392
+        QCoreApplication.translate("CP2KStudio", 'Dependency inspection did not complete successfully ({status}).', 'env.linker_failed'),
+        # core/environment_check.py:386
+        QCoreApplication.translate("CP2KStudio", 'The platform dependency inspection tool is unavailable.', 'env.linker_missing'),
+        # core/environment_check.py:573
+        QCoreApplication.translate("CP2KStudio", 'Logical Cores', 'env.logical'),
+        # core/environment_check.py:575
+        QCoreApplication.translate("CP2KStudio", 'Total Memory', 'env.memory'),
+        # core/environment_check.py:581
+        QCoreApplication.translate("CP2KStudio", 'Container Memory Headroom (conservative estimate)', 'env.memory_headroom'),
+        # core/environment_check.py:581
+        QCoreApplication.translate("CP2KStudio", 'Container Memory Limit', 'env.memory_limit'),
+        # core/environment_check.py:576
+        QCoreApplication.translate("CP2KStudio", 'Memory Usage', 'env.memory_percent'),
+        # core/environment_check.py:566
+        QCoreApplication.translate("CP2KStudio", 'Version Mismatch', 'env.mismatch'),
+        # core/environment_check.py:566
+        QCoreApplication.translate("CP2KStudio", 'Missing', 'env.missing'),
+        # core/environment_check.py:472
+        QCoreApplication.translate("CP2KStudio", 'Check installation and the GUI process PATH. Common platform installation and current Python/Conda locations were also checked. Input generation remains available.', 'env.missing_note'),
+        # core/environment_check.py:536
+        QCoreApplication.translate("CP2KStudio", 'MPI Runtime', 'env.mpi'),
+        # core/environment_check.py:542
+        QCoreApplication.translate("CP2KStudio", 'Launcher presence does not verify ABI compatibility with CP2K. No MPI job was launched.', 'env.mpi_abi'),
+        # core/environment_check.py:542
+        QCoreApplication.translate("CP2KStudio", 'Configured MPI Compatibility', 'env.mpi_compatibility'),
+        # core/environment_check.py:521
+        QCoreApplication.translate("CP2KStudio", 'mpirun / mpiexec not found.', 'env.mpi_missing'),
+        # core/environment_check.py:536
+        QCoreApplication.translate("CP2KStudio", 'Unknown implementation/version', 'env.mpi_unknown'),
+        # core/environment_check.py:551
+        QCoreApplication.translate("CP2KStudio", 'No CP2K executable is available to inspect.', 'env.no_library_target'),
+        # core/environment_check.py:554
+        QCoreApplication.translate("CP2KStudio", 'No resolvable dynamic links were reported.', 'env.no_links'),
+        # core/environment_check.py:37
+        QCoreApplication.translate("CP2KStudio", 'CP2K Not Installed', 'env.not_installed'),
+        # core/environment_check.py:432
+        QCoreApplication.translate("CP2KStudio", 'Not probed within the time budget', 'env.not_probed'),
+        # core/environment_check.py:547
+        QCoreApplication.translate("CP2KStudio", 'Not set', 'env.not_set'),
+        # core/environment_check.py:479
+        QCoreApplication.translate("CP2KStudio", 'CP2K was found outside the GUI PATH. Finder and Terminal may have different environments. Configure the target terminal before Local Run; Studio did not modify PATH.', 'env.off_path'),
+        # core/environment_check.py:547
+        QCoreApplication.translate("CP2KStudio", 'Invalid OpenMP thread-count value (not copied).', 'env.omp_invalid'),
+        # core/environment_check.py:564
+        QCoreApplication.translate("CP2KStudio", 'Optional', 'env.optional'),
+        # core/environment_check.py:557
+        QCoreApplication.translate("CP2KStudio", 'Optional / Static Scientific Libraries', 'env.optional_libraries'),
+        # core/environment_check.py:571
+        QCoreApplication.translate("CP2KStudio", 'Operating System', 'env.os'),
+        # core/environment_check.py:434
+        QCoreApplication.translate("CP2KStudio", 'Output limit exceeded', 'env.output_limit'),
+        # core/environment_check.py:567
+        QCoreApplication.translate("CP2KStudio", '{name} · {kind}', 'env.package_label'),
+        # core/environment_check.py:567
+        QCoreApplication.translate("CP2KStudio", '{state}; installed: {version}; required: {specifier}', 'env.package_value'),
+        # core/environment_check.py:313
+        QCoreApplication.translate("CP2KStudio", 'The packaging library is unavailable; requirements cannot be evaluated.', 'env.packaging_missing'),
+        # core/environment_check.py:38
+        QCoreApplication.translate("CP2KStudio", 'Partially Verified', 'env.partial'),
+        # core/environment_check.py:572
         QCoreApplication.translate("CP2KStudio", 'Physical Cores', 'env.physical'),
-        # core/environment_check.py:522
+        # core/environment_check.py:537
         QCoreApplication.translate("CP2KStudio", '{path}; {status}', 'env.probe_detail'),
-        # core/environment_check.py:448
+        # core/environment_check.py:459
         QCoreApplication.translate("CP2KStudio", 'Checking: {section}', 'env.progress'),
-        # core/environment_check.py:334
+        # core/environment_check.py:339
         QCoreApplication.translate("CP2KStudio", 'pyproject.toml could not be evaluated; dependency metadata is incomplete.', 'env.pyproject_unknown'),
-        # core/environment_check.py:545
+        # core/environment_check.py:560
         QCoreApplication.translate("CP2KStudio", 'Current Python', 'env.python'),
         # ui/environment_dialog.py:98
         QCoreApplication.translate("CP2KStudio", 'Inspecting this computer without changing calculation settings.', 'env.readonly'),
-        # core/environment_check.py:34
+        # core/environment_check.py:35
         QCoreApplication.translate("CP2KStudio", 'Environment Ready', 'env.ready'),
         # ui/environment_dialog.py:73
         QCoreApplication.translate("CP2KStudio", 'Recheck', 'env.recheck'),
-        # core/environment_check.py:210
+        # core/environment_check.py:215
         QCoreApplication.translate("CP2KStudio", 'Reported build flags', 'env.reported_flags'),
-        # core/environment_check.py:549
+        # core/environment_check.py:564
         QCoreApplication.translate("CP2KStudio", 'Required (declared)', 'env.required'),
-        # core/environment_check.py:336
+        # core/environment_check.py:341
         QCoreApplication.translate("CP2KStudio", 'Dependency declarations are unavailable; include requirements.txt and distribution metadata when packaging.', 'env.requirements_missing'),
-        # core/environment_check.py:573
+        # core/environment_check.py:588
         QCoreApplication.translate("CP2KStudio", 'Comparison is local; the exported configuration may target another machine. CPU and memory alone cannot predict DFT completion.', 'env.resource_note'),
-        # core/environment_check.py:573
+        # core/environment_check.py:588
         QCoreApplication.translate("CP2KStudio", 'MPI: {mpi}; OpenMP: {omp}; required logical slots: {slots}', 'env.resource_values'),
-        # core/environment_check.py:573
+        # core/environment_check.py:588
         QCoreApplication.translate("CP2KStudio", 'Configured Resources (read-only)', 'env.resources'),
-        # core/environment_check.py:85
+        # core/environment_check.py:86
         QCoreApplication.translate("CP2KStudio", 'Local inspection only. No DFT, SCF, or MD calculation was run. Installation checks do not verify all CP2K functions or numerical correctness. Results do not change the project, XML schema, or exported run settings.', 'env.scope'),
-        # core/environment_check.py:529
+        # core/environment_check.py:544
         QCoreApplication.translate("CP2KStudio", 'Exported run.sh', 'env.script'),
-        # core/environment_check.py:529
+        # core/environment_check.py:544
         QCoreApplication.translate("CP2KStudio", 'The existing script expects cp2k.psmp on PATH. This inspection does not change the script or choose another executable for it.', 'env.script_note'),
-        # core/environment_check.py:464
+        # core/environment_check.py:475
         QCoreApplication.translate("CP2KStudio", 'Current Detection Target', 'env.selected'),
-        # core/environment_check.py:525
+        # core/environment_check.py:540
         QCoreApplication.translate("CP2KStudio", 'Multiple MPI ranks are configured, but the selected CP2K build is serial.', 'env.serial_warning'),
-        # core/environment_check.py:385
+        # core/environment_check.py:390
         QCoreApplication.translate("CP2KStudio", 'Static or unlisted libraries cannot be verified from dynamic-link output; they are not marked missing.', 'env.static_libraries'),
-        # core/environment_check.py:208
+        # core/environment_check.py:213
         QCoreApplication.translate("CP2KStudio", 'Inferred from executable suffix; not a numerical test.', 'env.suffix_note'),
-        # core/environment_check.py:425
+        # core/environment_check.py:430
         QCoreApplication.translate("CP2KStudio", 'Timed out', 'env.timeout'),
-        # core/environment_check.py:72
+        # core/environment_check.py:73
         QCoreApplication.translate("CP2KStudio", 'CP2K Studio · Environment Check', 'env.title'),
-        # core/environment_check.py:428
+        # core/environment_check.py:433
         QCoreApplication.translate("CP2KStudio", 'Unavailable or permission denied', 'env.unavailable'),
-        # core/environment_check.py:494
+        # core/environment_check.py:505
         QCoreApplication.translate("CP2KStudio", 'Unknown', 'env.unknown'),
-        # core/environment_check.py:483
+        # core/environment_check.py:494
         QCoreApplication.translate("CP2KStudio", '{path}; revision: {revision}', 'env.version_detail'),
-        # core/environment_check.py:485
+        # core/environment_check.py:496
         QCoreApplication.translate("CP2KStudio", '{detail}. Studio targets CP2K 2026.1; input specifications may differ. XML and calculation settings were not changed.', 'env.version_mismatch'),
-        # core/environment_check.py:378
+        # core/environment_check.py:383
         QCoreApplication.translate("CP2KStudio", 'Native Windows DLL resolution is not verified. WSL2 is inspected as Linux.', 'env.windows_libraries'),
         # ui/environment_dialog.py:14
         QCoreApplication.translate("CP2KStudio", 'Inspection could not be completed. Recheck or copy the partial report.', 'env.worker_failed'),
@@ -353,11 +353,11 @@ def catalog_sources():
         QCoreApplication.translate("CP2KStudio", 'macOS denied Terminal automation. Allow the application hosting Python/CP2K Studio to control Terminal in System Settings → Privacy & Security → Automation, then retry.', 'local.automation_denied'),
         # core/local_run.py:190
         QCoreApplication.translate("CP2KStudio", 'Terminal automation timed out. The terminal may have opened; inspect it before retrying.', 'local.automation_timeout'),
-        # ui/local_run_dialog.py:153
+        # ui/local_run_dialog.py:170
         QCoreApplication.translate("CP2KStudio", 'Local Run', 'local.button'),
         # ui/local_run_dialog.py:50
         QCoreApplication.translate("CP2KStudio", 'Cancel', 'local.cancel'),
-        # ui/local_run_dialog.py:145
+        # ui/local_run_dialog.py:161
         QCoreApplication.translate("CP2KStudio", 'Cannot Start Local Run', 'local.cannot_start'),
         # ui/local_run_dialog.py:23
         QCoreApplication.translate("CP2KStudio", 'Run Command', 'local.command'),
@@ -391,7 +391,7 @@ def catalog_sources():
         QCoreApplication.translate("CP2KStudio", 'Calculation Directory', 'local.directory'),
         # core/local_run.py:66
         QCoreApplication.translate("CP2KStudio", 'Extract the ZIP package first, then select its calculation folder.', 'local.extract_zip'),
-        # ui/local_run_dialog.py:25
+        # core/windows_local_run.py:229
         QCoreApplication.translate("CP2KStudio", 'Follow output.out (equivalent to tail -n 30 -F).', 'local.follow'),
         # core/local_run.py:169
         QCoreApplication.translate("CP2KStudio", 'The bundled Local Run helper is missing or cannot be executed. Rebuild or restore the complete CP2K Studio.app.', 'local.helper_missing'),
@@ -409,13 +409,13 @@ def catalog_sources():
         QCoreApplication.translate("CP2KStudio", 'Existing output.out is retained. Unchanged old content will be skipped by the monitor; run.sh itself may overwrite results.', 'local.old_output'),
         # ui/local_run_dialog.py:24
         QCoreApplication.translate("CP2KStudio", 'Output Monitor', 'local.output_monitor'),
-        # ui/local_run_dialog.py:148
+        # ui/local_run_dialog.py:174
         QCoreApplication.translate("CP2KStudio", 'The calculation terminal was opened, but the output monitor could not be opened: {error}\n\nThe script may already be running. Check the calculation terminal; do not start it again just to open a monitor.', 'local.partial'),
         # ui/local_run_dialog.py:51
         QCoreApplication.translate("CP2KStudio", 'Run', 'local.run'),
-        # ui/local_run_dialog.py:99
+        # ui/local_run_dialog.py:104
         QCoreApplication.translate("CP2KStudio", 'Select Calculation Folder', 'local.select_folder'),
-        # ui/local_run_dialog.py:150
+        # ui/local_run_dialog.py:176
         QCoreApplication.translate("CP2KStudio", 'run.sh started in the calculation terminal. A separate terminal follows output.out. Startup does not confirm CP2K success; inspect the script exit code and logs. Closing the monitor or Studio does not stop the calculation.', 'local.started'),
         # core/local_run.py:194
         QCoreApplication.translate("CP2KStudio", 'Terminal could not be opened: {error}', 'local.terminal_failed'),
@@ -423,7 +423,7 @@ def catalog_sources():
         QCoreApplication.translate("CP2KStudio", 'This executes the selected run.sh on your computer. Only run packages you created or trust.', 'local.trust'),
         # ui/local_run_dialog.py:45
         QCoreApplication.translate("CP2KStudio", 'A previous launch has no confirmed exit status. Check existing terminals and processes before running again. Manually started jobs cannot be detected reliably.', 'local.uncertain'),
-        # ui/local_run_dialog.py:152
+        # ui/local_run_dialog.py:178
         QCoreApplication.translate("CP2KStudio", 'Terminal launch requests were sent, but script startup has not been confirmed. Check both terminals before retrying. Terminal startup is not proof of CP2K success.', 'local.unconfirmed'),
         # core/local_run.py:77
         QCoreApplication.translate("CP2KStudio", 'Cannot read {filename}: {error}', 'local.unreadable'),
@@ -895,7 +895,7 @@ def catalog_sources():
         QCoreApplication.translate("CP2KStudio", 'Get Official 2026.1 Data', 'studio.2e29276b7336ba30'),
         # core/input_import.py:252
         QCoreApplication.translate("CP2KStudio", 'Original OUTER_SCF EPS_SCF differs from the inner threshold. This interface uses one threshold; please review.', 'studio.2ec98c2c8463f644'),
-        # core/file_references.py:85
+        # core/file_references.py:89
         QCoreApplication.translate("CP2KStudio", 'The reference resolves outside the package', 'studio.2f7bb880fed4faa9'),
         # ui/preset_dialogs.py:127
         QCoreApplication.translate("CP2KStudio", 'Delete', 'studio.2f9daa828907b93f'),
@@ -965,7 +965,7 @@ def catalog_sources():
         QCoreApplication.translate("CP2KStudio", ' · Short-range SR form', 'studio.3e5521b4f03bc04f'),
         # ui/main_window.py:805
         QCoreApplication.translate("CP2KStudio", 'Export Complete', 'studio.3e6886d17a1cf43c'),
-        # core/file_references.py:82
+        # core/file_references.py:86
         QCoreApplication.translate("CP2KStudio", 'A complete package INP must use paths relative to the package', 'studio.3f502bfeae6d9c1a'),
         # core/kind_validator.py:149
         QCoreApplication.translate("CP2KStudio", 'XC label is unknown; functional compatibility cannot be confirmed automatically', 'studio.3f8e745f847d07f5'),
@@ -1089,7 +1089,7 @@ def catalog_sources():
         QCoreApplication.translate("CP2KStudio", 'Geometry Optimization', 'studio.5688511fca2c8507'),
         # ui/main_window.py:202
         QCoreApplication.translate("CP2KStudio", '07  Runtime Settings', 'studio.56aa9cc7f7010ba2'),
-        # core/file_references.py:33
+        # core/file_references.py:37
         QCoreApplication.translate("CP2KStudio", '{p0}: path cannot be safely written directly into CP2K INP: {p1!r}. Export a complete package to normalize filenames, or rename the source file first.', 'studio.56ceeae123ffa617'),
         # ui/recommendation_dialog.py:242
         QCoreApplication.translate("CP2KStudio", 'Application failed: {p0}', 'studio.570e9d8af11fa767'),
@@ -1117,7 +1117,7 @@ def catalog_sources():
         QCoreApplication.translate("CP2KStudio", 'e.g. -3.0 or -3e0', 'studio.5c4739d3a58813d6'),
         # ui/main_window.py:785
         QCoreApplication.translate("CP2KStudio", 'Exported: {p0}', 'studio.5c7ef7224c1de956'),
-        # core/file_references.py:89
+        # core/file_references.py:93
         QCoreApplication.translate("CP2KStudio", '{p0}: dependency is inaccessible: {p1!r} (working directory {p2}): {p3}', 'studio.5c8624e46e9af3fd'),
         # ui/kind_panel.py:378
         QCoreApplication.translate("CP2KStudio", '✓ q={p0} matched', 'studio.5d391c3fa733b5fd'),
@@ -1199,7 +1199,7 @@ def catalog_sources():
         QCoreApplication.translate("CP2KStudio", 'Missing ELEMENT definition for KIND {p0}', 'studio.6c4e221b785ed522'),
         # ui/export_panel.py:107
         QCoreApplication.translate("CP2KStudio", 'Save current DFT, SCF, basis, optimization, and related settings for reuse. Cell and coordinates are excluded by default; incomplete drafts are marked accordingly.', 'studio.6c9eacd0d1efad66'),
-        # core/file_references.py:26
+        # core/file_references.py:27
         QCoreApplication.translate("CP2KStudio", 'No file-keyword serialization rule is defined for {p0}', 'studio.6cba4fab0637f991'),
         # ui/structure_view.py:345
         QCoreApplication.translate("CP2KStudio", '{p0} atoms · {p1}', 'studio.6d5c69da8964adc1'),
@@ -1623,7 +1623,7 @@ def catalog_sources():
         QCoreApplication.translate("CP2KStudio", '08  Export & Presets', 'studio.c86dd81d809dee26'),
         # ui/kind_panel.py:161
         QCoreApplication.translate("CP2KStudio", 'e.g. 6', 'studio.c9566523da347bed'),
-        # core/project_io.py:155
+        # core/project_io.py:186
         QCoreApplication.translate("CP2KStudio", 'Export folder already exists; choose a new folder: {p0}', 'studio.ca0a92650f6bc7e0'),
         # ui/main_window.py:673
         QCoreApplication.translate("CP2KStudio", ' (Not XML-Certified)', 'studio.ca49ec7ca1226495'),
@@ -1701,7 +1701,7 @@ def catalog_sources():
         QCoreApplication.translate("CP2KStudio", 'KIND {p0}：{p1}', 'studio.d59e6e4c95e0240c'),
         # ui/dft_panel.py:30
         QCoreApplication.translate("CP2KStudio", 'Quickstep / GPW · Γ point; the calculation method is unchanged.', 'studio.d5d15bb7eb25d40a'),
-        # core/project_io.py:69
+        # core/project_io.py:100
         QCoreApplication.translate("CP2KStudio", 'Project file exceeds the 100 MB limit', 'studio.d6a7040604825764'),
         # core/comprehensive_check.py:55
         QCoreApplication.translate("CP2KStudio", '✓ Passed', 'studio.d6c446460683f728'),
@@ -2003,6 +2003,98 @@ def catalog_sources():
         QCoreApplication.translate("CP2KStudio", 'THERMOCHEMISTRY', 'vib.thermo_label'),
         # core/vibrational.py:124
         QCoreApplication.translate("CP2KStudio", 'VIBRATIONAL_ANALYSIS / THERMOCHEMISTRY: confirm the isolated gas-phase harmonic approximation is appropriate; the application cannot infer this from the coordinates.', 'vib.thermo_warning'),
+        # ui/windows_local_run_dialog.py:43
+        QCoreApplication.translate("CP2KStudio", 'Browse…', 'winrun.browse'),
+        # ui/windows_local_run_dialog.py:90
+        QCoreApplication.translate("CP2KStudio", 'Browse CP2K Executable…', 'winrun.browse_executable'),
+        # ui/windows_local_run_dialog.py:116
+        QCoreApplication.translate("CP2KStudio", 'Checking CP2K --version and runtime DLL loading…', 'winrun.checking'),
+        # ui/windows_local_run_dialog.py:61
+        QCoreApplication.translate("CP2KStudio", 'Choose CP2K. Start Calculation checks --version and its runtime DLLs before launching.', 'winrun.choose_exe'),
+        # core/windows_local_run.py:205
+        QCoreApplication.translate("CP2KStudio", 'Validate the executable and confirm Start Calculation first.', 'winrun.confirm_first'),
+        # core/windows_local_run.py:228
+        QCoreApplication.translate("CP2KStudio", 'This native calculation launch was cancelled or superseded before execution. CP2K was not started.', 'winrun.console_cancelled'),
+        # core/windows_local_run.py:222
+        QCoreApplication.translate("CP2KStudio", '\nCP2K exit code: {exit_code}. Inspect output.out; exit status does not prove convergence.', 'winrun.console_exit'),
+        # core/windows_local_run.py:223
+        QCoreApplication.translate("CP2KStudio", 'Could not start native CP2K: {error}', 'winrun.console_failed'),
+        # core/windows_local_run.py:227
+        QCoreApplication.translate("CP2KStudio", 'Ctrl+C received; waiting for the native CP2K process to exit.', 'winrun.console_interrupted'),
+        # core/windows_local_run.py:224
+        QCoreApplication.translate("CP2KStudio", 'Existing output.out may contain a previous run. Showing its last lines is not a success indication; CP2K may overwrite this log.', 'winrun.console_old_log'),
+        # core/windows_local_run.py:221
+        QCoreApplication.translate("CP2KStudio", 'Calculation directory: {directory}\nWindows Native: one CP2K process, OpenMP threads {threads}\n{executable} -i input.inp -o output.out', 'winrun.console_running'),
+        # core/windows_local_run.py:60
+        QCoreApplication.translate("CP2KStudio", 'Cannot resolve an input dependency: {path}', 'winrun.dependency_error'),
+        # core/windows_local_run.py:44
+        QCoreApplication.translate("CP2KStudio", 'Select an extracted calculation folder containing input.inp.', 'winrun.directory_error'),
+        # ui/windows_local_run_dialog.py:46
+        QCoreApplication.translate("CP2KStudio", 'Runtime DLL Directory', 'winrun.dll_directory'),
+        # core/windows_local_run.py:80
+        QCoreApplication.translate("CP2KStudio", 'Runtime DLL Directory does not exist: {path}', 'winrun.dll_error'),
+        # core/windows_local_run.py:211
+        QCoreApplication.translate("CP2KStudio", 'CP2K EXE changed after validation. Reopen Local Run and check it again.', 'winrun.exe_changed'),
+        # core/windows_local_run.py:78
+        QCoreApplication.translate("CP2KStudio", 'Choose an existing native Windows CP2K .exe file.', 'winrun.exe_error'),
+        # ui/windows_local_run_dialog.py:91
+        QCoreApplication.translate("CP2KStudio", 'Windows Executable (*.exe)', 'winrun.exe_filter'),
+        # ui/windows_local_run_dialog.py:45
+        QCoreApplication.translate("CP2KStudio", 'CP2K Executable', 'winrun.executable'),
+        # ui/windows_local_run_dialog.py:52
+        QCoreApplication.translate("CP2KStudio", 'Execution Mode', 'winrun.execution_mode'),
+        # core/windows_local_run.py:254
+        QCoreApplication.translate("CP2KStudio", 'Native CP2K failed to start (exit {exit_code}). Check the calculation terminal. {detail}', 'winrun.failed_start'),
+        # ui/windows_local_run_dialog.py:39
+        QCoreApplication.translate("CP2KStudio", 'Calculation Folder', 'winrun.folder'),
+        # core/windows_local_run.py:171
+        QCoreApplication.translate("CP2KStudio", 'The Windows Local Run helper is missing. Restore the complete Portable folder.', 'winrun.helper_missing'),
+        # core/windows_local_run.py:69
+        QCoreApplication.translate("CP2KStudio", 'Cannot read input.inp or a referenced structure/database/restart file: {error}', 'winrun.input_error'),
+        # core/windows_local_run.py:47
+        QCoreApplication.translate("CP2KStudio", 'Missing input.inp in the calculation folder.', 'winrun.input_missing'),
+        # core/windows_local_run.py:208
+        QCoreApplication.translate("CP2KStudio", 'output.out appeared while configuring this run. CP2K may overwrite it. Click Start Calculation again to confirm, or Cancel.', 'winrun.log_appeared'),
+        # ui/windows_local_run_dialog.py:86
+        QCoreApplication.translate("CP2KStudio", 'Windows Native / Serial or OpenMP', 'winrun.mode'),
+        # core/windows_local_run.py:89
+        QCoreApplication.translate("CP2KStudio", 'Windows Native currently requires a verified Serial/OpenMP build, normally cp2k.sopt.exe or cp2k.ssmp.exe. MPI/WSL launch is not configured.', 'winrun.mode_error'),
+        # ui/windows_local_run_dialog.py:83
+        QCoreApplication.translate("CP2KStudio", 'Windows Native / {mode}', 'winrun.native_mode'),
+        # core/windows_local_run.py:122
+        QCoreApplication.translate("CP2KStudio", 'PowerShell was not found. Install or enable PowerShell to open independent Windows consoles.', 'winrun.no_terminal'),
+        # ui/windows_local_run_dialog.py:66
+        QCoreApplication.translate("CP2KStudio", 'Existing output.out may be overwritten by CP2K; other restart/trajectory outputs may also be written by the selected input. Studio does not delete or back up results. Check any previous terminals before starting. Cancel to preserve the folder.', 'winrun.old_output'),
+        # ui/windows_local_run_dialog.py:56
+        QCoreApplication.translate("CP2KStudio", 'Output File', 'winrun.output'),
+        # ui/local_run_dialog.py:165
+        QCoreApplication.translate("CP2KStudio", 'The calculation terminal opened, but the monitor could not be opened: {error}. Check the existing calculation terminal; do not repeat the calculation to reopen its monitor.', 'winrun.partial'),
+        # core/windows_local_run.py:226
+        QCoreApplication.translate("CP2KStudio", 'CP2K started, but local preferences could not be saved: {error}', 'winrun.preferences_error'),
+        # core/windows_local_run.py:57
+        QCoreApplication.translate("CP2KStudio", 'Preprocessed INP files cannot be checked reliably here. Select a self-contained exported package; input.inp was not changed.', 'winrun.preprocessor'),
+        # core/windows_local_run.py:86
+        QCoreApplication.translate("CP2KStudio", 'CP2K --version could not start successfully ({status}). Check Runtime DLL Directory, including libgfortran-5.dll for MSYS2 UCRT64. EXE existence alone does not verify its runtime.\n{detail}', 'winrun.probe_error'),
+        # ui/windows_local_run_dialog.py:96
+        QCoreApplication.translate("CP2KStudio", 'Start Calculation will verify this EXE and its runtime before launching.', 'winrun.recheck_exe'),
+        # ui/windows_local_run_dialog.py:63
+        QCoreApplication.translate("CP2KStudio", 'This run uses one native CP2K process and the threads shown above. Exported MPI/run.sh settings are not used or changed. Serial builds require 1 thread. Only run packages you trust.', 'winrun.run_scope'),
+        # core/windows_local_run.py:91
+        QCoreApplication.translate("CP2KStudio", 'The selected CP2K build is Serial. Set OpenMP Threads to 1, or choose cp2k.ssmp.exe.', 'winrun.serial_threads'),
+        # ui/windows_local_run_dialog.py:70
+        QCoreApplication.translate("CP2KStudio", 'Start Calculation', 'winrun.start'),
+        # ui/local_run_dialog.py:167
+        QCoreApplication.translate("CP2KStudio", 'Native CP2K started. A separate terminal follows output.out. Check the real CP2K exit code and output; startup does not prove convergence. Closing Studio or the monitor does not stop the calculation.', 'winrun.started'),
+        # core/windows_local_run.py:201
+        QCoreApplication.translate("CP2KStudio", 'Cannot open a Windows terminal: {error}', 'winrun.terminal_error'),
+        # ui/windows_local_run_dialog.py:55
+        QCoreApplication.translate("CP2KStudio", 'OpenMP Threads', 'winrun.threads'),
+        # core/windows_local_run.py:75
+        QCoreApplication.translate("CP2KStudio", 'OpenMP Threads must be a positive integer.', 'winrun.threads_error'),
+        # ui/local_run_dialog.py:169
+        QCoreApplication.translate("CP2KStudio", 'Windows terminal requests were sent, but CP2K startup is not confirmed. Inspect both terminals before retrying.', 'winrun.unconfirmed'),
+        # ui/windows_local_run_dialog.py:60
+        QCoreApplication.translate("CP2KStudio", 'Verified CP2K {version} · {mode}', 'winrun.verified'),
         # ui/structure_panel.py:121
         QCoreApplication.translate("CP2KStudio", 'Generate Simulation Box…', 'xsd.box_button'),
         # core/structure.py:70

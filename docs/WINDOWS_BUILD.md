@@ -24,7 +24,7 @@ Get-Content .\SHA256SUMS.txt
 
 默认 English，支持实时简体中文。Qt 用户预设沿用标准 GenericConfigLocation 下的 `CP2K-Studio/presets`，运行日志位于 `%LOCALAPPDATA%\CP2K Studio\logs`；不往 Portable 文件夹保存用户配置。项目和计算包由用户另选位置保存。
 
-GUI 自带 Python/Qt/ASE 等运行库，**不包含 CP2K 引擎或 MPI**。Environment Check 只识别原生 Windows PE 可执行程序，不执行 WSL、otool、ldd 或 Terminal.app；Windows DLL 依赖解析暂标为 Unknown。缺少 CP2K 不影响生成/导出输入。Local Run 明确提示 Windows/WSL 启动暂未配置，不把 Bash 脚本交给 CMD 执行。导出的 run.sh 仍面向所选计算环境，不会转换成 Windows 脚本。
+GUI 自带 Python/Qt/ASE 等运行库，**不包含 CP2K 引擎、MSYS2 DLL 或 MPI**。Environment Check 只识别原生 Windows PE 可执行程序，不执行 WSL、otool、ldd 或 Terminal.app；完整 Windows DLL 依赖解析仍暂标为 Unknown。缺少 CP2K 不影响生成/导出输入。新增 [Windows Native Local Run](WINDOWS_LOCAL_RUN.md) 可直接运行原生 Serial/OpenMP EXE，不把 Bash 脚本交给 CMD，也不启动 WSL。导出的 run.sh 仍面向所选计算环境，不会转换成 Windows 脚本。
 
 ## 构建配置和本机复用
 

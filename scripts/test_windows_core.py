@@ -15,6 +15,7 @@ MODULES = [
     'ot_energy_gap', 'surface_dipole', 'cell_optimization', 'cell_opt_removed_type',
     'vibrational', 'vibrational_severity', 'independent_spectra', 'periodic_spectra',
     'linres_preconditioning', 'md', 'run_environment', 'windows_packaging',
+    'windows_local_run',
 ]
 
 

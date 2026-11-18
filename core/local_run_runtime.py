@@ -21,6 +21,10 @@ PENDING_SECONDS = 300
 def read_json(path):
     try:
         return json.loads(Path(path).read_text(encoding='utf-8'))
+    except PermissionError:
+        if os.name != 'nt':
+            raise
+        return {}
     except (FileNotFoundError, ValueError):
         return {}
 
@@ -31,7 +35,14 @@ def write_json(path, value):
     with temporary.open('w', encoding='utf-8') as handle:
         os.chmod(temporary, 0o600)
         json.dump(value, handle, ensure_ascii=False)
-    os.replace(temporary, path)
+    for attempt in range(20):
+        try:
+            os.replace(temporary, path)
+            break
+        except PermissionError:
+            if os.name != 'nt' or attempt == 19:
+                raise
+            time.sleep(.02)
 
 
 def registry_folder(root, directory):
@@ -41,10 +52,22 @@ def registry_folder(root, directory):
 
 @contextmanager
 def coordination(folder):
-    import fcntl  # Local Run is POSIX-only; importing the app on Windows is safe.
     folder = Path(folder)
     folder.mkdir(parents=True, exist_ok=True, mode=0o700)
     with (folder / 'state.lock').open('a+b') as handle:
+        if os.name == 'nt':
+            import msvcrt
+            if not handle.seek(0, 2):
+                handle.write(b'\0'); handle.flush()
+            handle.seek(0)
+            msvcrt.locking(handle.fileno(), msvcrt.LK_LOCK, 1)
+            try:
+                yield
+            finally:
+                handle.seek(0)
+                msvcrt.locking(handle.fileno(), msvcrt.LK_UNLCK, 1)
+            return
+        import fcntl
         fcntl.flock(handle, fcntl.LOCK_EX)
         try:
             yield
@@ -54,8 +77,19 @@ def coordination(folder):
 
 def run_lock(folder):
     """Return a held lock or None. The descriptor also survives in run.sh."""
-    import fcntl
     handle = (Path(folder) / 'running.lock').open('a+b')
+    if os.name == 'nt':
+        import msvcrt
+        if not handle.seek(0, 2):
+            handle.write(b'\0'); handle.flush()
+        handle.seek(0)
+        try:
+            msvcrt.locking(handle.fileno(), msvcrt.LK_NBLCK, 1)
+        except OSError:
+            handle.close()
+            return None
+        return handle
+    import fcntl
     try:
         fcntl.flock(handle, fcntl.LOCK_EX | fcntl.LOCK_NB)
     except BlockingIOError:

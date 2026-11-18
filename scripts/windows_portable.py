@@ -33,6 +33,8 @@ def verify(directory):
     exe = directory / 'CP2K Studio.exe'
     if pe_info(exe) != (0x8664, 0x20b, 2):
         raise ValueError('Expected an AMD64 PE32+ Windows GUI executable')
+    if pe_info(directory / 'cp2k-studio-runner.exe') != (0x8664, 0x20b, 3):
+        raise ValueError('Missing or invalid AMD64 console Local Run helper')
     internal = directory / '_internal'
     for name in REQUIRED:
         if not (internal / name).is_file() or not (internal / name).stat().st_size:
@@ -47,7 +49,9 @@ def verify(directory):
     for path in directory.rglob('*'):
         if path.is_symlink():
             raise ValueError('Unexpected symlink: ' + str(path))
-        if path.name in {'.git', '.venv', '.env', 'build', 'cp2k.psmp', 'mpiexec.exe', 'mpirun.exe'} or path.suffix in {'.app', '.dmg'}:
+        if path.name.lower() in {'.git', '.venv', '.env', 'build', 'cp2k', 'cp2k.exe',
+                'cp2k.psmp', 'cp2k.ssmp', 'cp2k.popt', 'cp2k.sopt', 'cp2k.psmp.exe',
+                'cp2k.ssmp.exe', 'cp2k.popt.exe', 'cp2k.sopt.exe', 'mpiexec.exe', 'mpirun.exe'} or path.suffix in {'.app', '.dmg'}:
             raise ValueError('Unexpected private/build/engine content: ' + str(path))
     return exe
 

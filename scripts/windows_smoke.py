@@ -21,7 +21,7 @@ def run(destination):
         from core.input_export import export_input
         from core.presets import PresetStore, capture_preset, apply_preset
         from core.environment_check import python_dependencies, inspect_libraries
-        from core.local_run import detect_terminal, LocalRunError
+        from core.windows_local_run import WindowsLocalRunBackend
         from ui.main_window import MainWindow
         from ui.app_icon import set_application_icon
         from ui.preset_dialogs import default_preset_directory
@@ -87,14 +87,24 @@ def run(destination):
         def unexpected(*args, **kwargs):
             raise AssertionError('Windows must not invoke POSIX tools')
         assert inspect_libraries('unused.exe', unexpected, 'Windows', {})[0] == []
-        try:
-            detect_terminal('Windows')
-        except LocalRunError as exc:
-            assert exc.args[0].code == 'local.windows_unsupported'
-        else:
-            raise AssertionError('Windows Local Run must be explicitly unsupported')
+        backend = WindowsLocalRunBackend(cache=output/'local-jobs',settings_file=output/'local-settings.json')
+        native_package = backend.inspect(package.parent)
+        assert native_package.directory == package.parent and native_package.native_windows
+        from ui.windows_local_run_dialog import WindowsLocalRunDialog
+        dialog = WindowsLocalRunDialog(native_package, backend, window)
+        before = window.project.model_dump_json(), window.dirty, window._revision, window.preview.toPlainText()
+        dialog.executable.setText('C:/CP2K/cp2k.ssmp.exe'); dialog.threads.setValue(3)
+        for language in ['zh_CN','en_US']:
+            language_manager().set_language(language); app.processEvents()
+            assert dialog.threads.value() == 3 and dialog.executable.text() == 'C:/CP2K/cp2k.ssmp.exe'
+            assert before == (window.project.model_dump_json(),window.dirty,window._revision,window.preview.toPlainText())
+        dialog.reject()
+        import os
+        if sys.platform == 'win32' and os.environ.get('CP2K_STUDIO_TEST_CP2K'):
+            from scripts.windows_native_smoke import run as run_native_smoke
+            report['checks'].append(run_native_smoke(os.environ['CP2K_STUDIO_TEST_CP2K'], package.parent, output))
         window.close()
-        report['checks'].append('Windows platform guards; no local calculation')
+        report['checks'].append('Windows native configuration/translation without project edits; no real calculation')
         report['passed'] = True
     except Exception:
         report['error'] = traceback.format_exc()

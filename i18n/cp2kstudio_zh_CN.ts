@@ -4879,7 +4879,291 @@ NPROC_REP 应为正整数，通常应能整除 MPI 总进程数。
       <translation>热化学计算</translation>
     </message>
     <message>
+      <location filename="catalog_sources.py" line="2007" />
+      <source>Browse…</source>
+      <comment>winrun.browse</comment>
+      <translation>浏览…</translation>
+    </message>
+    <message>
+      <location filename="catalog_sources.py" line="2009" />
+      <source>Browse CP2K Executable…</source>
+      <comment>winrun.browse_executable</comment>
+      <translation>选择 CP2K 可执行程序…</translation>
+    </message>
+    <message>
+      <location filename="catalog_sources.py" line="2011" />
+      <source>Checking CP2K --version and runtime DLL loading…</source>
+      <comment>winrun.checking</comment>
+      <translation>正在检查 CP2K --version 及运行时 DLL 加载…</translation>
+    </message>
+    <message>
+      <location filename="catalog_sources.py" line="2013" />
+      <source>Choose CP2K. Start Calculation checks --version and its runtime DLLs before launching.</source>
+      <comment>winrun.choose_exe</comment>
+      <translation>请选择 CP2K。“开始计算”会先检查 --version 和运行时 DLL，再启动计算。</translation>
+    </message>
+    <message>
+      <location filename="catalog_sources.py" line="2015" />
+      <source>Validate the executable and confirm Start Calculation first.</source>
+      <comment>winrun.confirm_first</comment>
+      <translation>请先验证可执行程序，再确认“开始计算”。</translation>
+    </message>
+    <message>
+      <location filename="catalog_sources.py" line="2017" />
+      <source>This native calculation launch was cancelled or superseded before execution. CP2K was not started.</source>
+      <comment>winrun.console_cancelled</comment>
+      <translation>本次原生计算启动已取消或被新请求取代，尚未启动 CP2K。</translation>
+    </message>
+    <message>
+      <location filename="catalog_sources.py" line="2019" />
+      <source>
+CP2K exit code: {exit_code}. Inspect output.out; exit status does not prove convergence.</source>
+      <comment>winrun.console_exit</comment>
+      <translation>
+CP2K 退出码：{exit_code}。请检查 output.out；退出状态不代表计算已经收敛。</translation>
+    </message>
+    <message>
+      <location filename="catalog_sources.py" line="2021" />
+      <source>Could not start native CP2K: {error}</source>
+      <comment>winrun.console_failed</comment>
+      <translation>无法启动原生 CP2K：{error}</translation>
+    </message>
+    <message>
+      <location filename="catalog_sources.py" line="2023" />
+      <source>Ctrl+C received; waiting for the native CP2K process to exit.</source>
+      <comment>winrun.console_interrupted</comment>
+      <translation>已收到 Ctrl+C，等待原生 CP2K 进程退出。</translation>
+    </message>
+    <message>
+      <location filename="catalog_sources.py" line="2025" />
+      <source>Existing output.out may contain a previous run. Showing its last lines is not a success indication; CP2K may overwrite this log.</source>
+      <comment>winrun.console_old_log</comment>
+      <translation>现有 output.out 可能属于之前的计算。显示末尾内容不表示本次计算成功；CP2K 可能覆盖该日志。</translation>
+    </message>
+    <message>
       <location filename="catalog_sources.py" line="2027" />
+      <source>Calculation directory: {directory}
+Windows Native: one CP2K process, OpenMP threads {threads}
+{executable} -i input.inp -o output.out</source>
+      <comment>winrun.console_running</comment>
+      <translation>计算目录：{directory}
+Windows 原生：单个 CP2K 进程，OpenMP 线程数 {threads}
+{executable} -i input.inp -o output.out</translation>
+    </message>
+    <message>
+      <location filename="catalog_sources.py" line="2029" />
+      <source>Cannot resolve an input dependency: {path}</source>
+      <comment>winrun.dependency_error</comment>
+      <translation>无法解析输入文件依赖：{path}</translation>
+    </message>
+    <message>
+      <location filename="catalog_sources.py" line="2031" />
+      <source>Select an extracted calculation folder containing input.inp.</source>
+      <comment>winrun.directory_error</comment>
+      <translation>请选择包含 input.inp 的已解压计算目录。</translation>
+    </message>
+    <message>
+      <location filename="catalog_sources.py" line="2033" />
+      <source>Runtime DLL Directory</source>
+      <comment>winrun.dll_directory</comment>
+      <translation>运行时 DLL 目录</translation>
+    </message>
+    <message>
+      <location filename="catalog_sources.py" line="2035" />
+      <source>Runtime DLL Directory does not exist: {path}</source>
+      <comment>winrun.dll_error</comment>
+      <translation>运行时 DLL 目录不存在：{path}</translation>
+    </message>
+    <message>
+      <location filename="catalog_sources.py" line="2037" />
+      <source>CP2K EXE changed after validation. Reopen Local Run and check it again.</source>
+      <comment>winrun.exe_changed</comment>
+      <translation>验证后 CP2K EXE 已变化。请重新打开本地运行并再次检查。</translation>
+    </message>
+    <message>
+      <location filename="catalog_sources.py" line="2039" />
+      <source>Choose an existing native Windows CP2K .exe file.</source>
+      <comment>winrun.exe_error</comment>
+      <translation>请选择存在的 Windows 原生 CP2K .exe 文件。</translation>
+    </message>
+    <message>
+      <location filename="catalog_sources.py" line="2041" />
+      <source>Windows Executable (*.exe)</source>
+      <comment>winrun.exe_filter</comment>
+      <translation>Windows 可执行程序 (*.exe)</translation>
+    </message>
+    <message>
+      <location filename="catalog_sources.py" line="2043" />
+      <source>CP2K Executable</source>
+      <comment>winrun.executable</comment>
+      <translation>CP2K 可执行程序</translation>
+    </message>
+    <message>
+      <location filename="catalog_sources.py" line="2045" />
+      <source>Execution Mode</source>
+      <comment>winrun.execution_mode</comment>
+      <translation>运行模式</translation>
+    </message>
+    <message>
+      <location filename="catalog_sources.py" line="2047" />
+      <source>Native CP2K failed to start (exit {exit_code}). Check the calculation terminal. {detail}</source>
+      <comment>winrun.failed_start</comment>
+      <translation>原生 CP2K 启动失败（退出码 {exit_code}）。请检查计算终端。{detail}</translation>
+    </message>
+    <message>
+      <location filename="catalog_sources.py" line="2049" />
+      <source>Calculation Folder</source>
+      <comment>winrun.folder</comment>
+      <translation>计算目录</translation>
+    </message>
+    <message>
+      <location filename="catalog_sources.py" line="2051" />
+      <source>The Windows Local Run helper is missing. Restore the complete Portable folder.</source>
+      <comment>winrun.helper_missing</comment>
+      <translation>缺少 Windows 本地运行助手，请恢复完整的免安装程序文件夹。</translation>
+    </message>
+    <message>
+      <location filename="catalog_sources.py" line="2053" />
+      <source>Cannot read input.inp or a referenced structure/database/restart file: {error}</source>
+      <comment>winrun.input_error</comment>
+      <translation>无法读取 input.inp 或其引用的结构、数据库、重启文件：{error}</translation>
+    </message>
+    <message>
+      <location filename="catalog_sources.py" line="2055" />
+      <source>Missing input.inp in the calculation folder.</source>
+      <comment>winrun.input_missing</comment>
+      <translation>计算目录中缺少 input.inp。</translation>
+    </message>
+    <message>
+      <location filename="catalog_sources.py" line="2057" />
+      <source>output.out appeared while configuring this run. CP2K may overwrite it. Click Start Calculation again to confirm, or Cancel.</source>
+      <comment>winrun.log_appeared</comment>
+      <translation>配置期间出现了 output.out，CP2K 可能覆盖它。再次点击“开始计算”以确认，或取消。</translation>
+    </message>
+    <message>
+      <location filename="catalog_sources.py" line="2059" />
+      <source>Windows Native / Serial or OpenMP</source>
+      <comment>winrun.mode</comment>
+      <translation>Windows 原生 / 串行或 OpenMP</translation>
+    </message>
+    <message>
+      <location filename="catalog_sources.py" line="2061" />
+      <source>Windows Native currently requires a verified Serial/OpenMP build, normally cp2k.sopt.exe or cp2k.ssmp.exe. MPI/WSL launch is not configured.</source>
+      <comment>winrun.mode_error</comment>
+      <translation>Windows 原生模式目前要求已验证的串行/OpenMP 版本，通常为 cp2k.sopt.exe 或 cp2k.ssmp.exe。未配置 MPI/WSL 启动。</translation>
+    </message>
+    <message>
+      <location filename="catalog_sources.py" line="2063" />
+      <source>Windows Native / {mode}</source>
+      <comment>winrun.native_mode</comment>
+      <translation>Windows 原生 / {mode}</translation>
+    </message>
+    <message>
+      <location filename="catalog_sources.py" line="2065" />
+      <source>PowerShell was not found. Install or enable PowerShell to open independent Windows consoles.</source>
+      <comment>winrun.no_terminal</comment>
+      <translation>未找到 PowerShell。请安装或启用 PowerShell，以便打开独立的 Windows 控制台。</translation>
+    </message>
+    <message>
+      <location filename="catalog_sources.py" line="2067" />
+      <source>Existing output.out may be overwritten by CP2K; other restart/trajectory outputs may also be written by the selected input. Studio does not delete or back up results. Check any previous terminals before starting. Cancel to preserve the folder.</source>
+      <comment>winrun.old_output</comment>
+      <translation>CP2K 可能覆盖现有 output.out；所选输入也可能写入重启或轨迹文件。Studio 不会删除或备份结果。开始前请检查之前的终端；取消可保留当前目录。</translation>
+    </message>
+    <message>
+      <location filename="catalog_sources.py" line="2069" />
+      <source>Output File</source>
+      <comment>winrun.output</comment>
+      <translation>输出文件</translation>
+    </message>
+    <message>
+      <location filename="catalog_sources.py" line="2071" />
+      <source>The calculation terminal opened, but the monitor could not be opened: {error}. Check the existing calculation terminal; do not repeat the calculation to reopen its monitor.</source>
+      <comment>winrun.partial</comment>
+      <translation>计算终端已打开，但无法打开监控终端：{error}。请检查已有计算终端，不要为了打开监控而重复启动计算。</translation>
+    </message>
+    <message>
+      <location filename="catalog_sources.py" line="2073" />
+      <source>CP2K started, but local preferences could not be saved: {error}</source>
+      <comment>winrun.preferences_error</comment>
+      <translation>CP2K 已启动，但无法保存本地运行设置：{error}</translation>
+    </message>
+    <message>
+      <location filename="catalog_sources.py" line="2075" />
+      <source>Preprocessed INP files cannot be checked reliably here. Select a self-contained exported package; input.inp was not changed.</source>
+      <comment>winrun.preprocessor</comment>
+      <translation>此处无法可靠检查含预处理指令的 INP。请选择自包含的导出计算包；input.inp 未被修改。</translation>
+    </message>
+    <message>
+      <location filename="catalog_sources.py" line="2077" />
+      <source>CP2K --version could not start successfully ({status}). Check Runtime DLL Directory, including libgfortran-5.dll for MSYS2 UCRT64. EXE existence alone does not verify its runtime.
+{detail}</source>
+      <comment>winrun.probe_error</comment>
+      <translation>CP2K --version 未能成功启动（{status}）。请检查运行时 DLL 目录，包括 MSYS2 UCRT64 的 libgfortran-5.dll。仅有 EXE 文件不能证明运行环境可用。
+{detail}</translation>
+    </message>
+    <message>
+      <location filename="catalog_sources.py" line="2079" />
+      <source>Start Calculation will verify this EXE and its runtime before launching.</source>
+      <comment>winrun.recheck_exe</comment>
+      <translation>“开始计算”会在启动前验证此 EXE 及其运行环境。</translation>
+    </message>
+    <message>
+      <location filename="catalog_sources.py" line="2081" />
+      <source>This run uses one native CP2K process and the threads shown above. Exported MPI/run.sh settings are not used or changed. Serial builds require 1 thread. Only run packages you trust.</source>
+      <comment>winrun.run_scope</comment>
+      <translation>本次使用单个原生 CP2K 进程和上方线程数，不使用或修改导出的 MPI/run.sh 设置。串行版本要求线程数为 1。请仅运行自己创建或信任的计算包。</translation>
+    </message>
+    <message>
+      <location filename="catalog_sources.py" line="2083" />
+      <source>The selected CP2K build is Serial. Set OpenMP Threads to 1, or choose cp2k.ssmp.exe.</source>
+      <comment>winrun.serial_threads</comment>
+      <translation>所选 CP2K 为串行版本。请将 OpenMP 线程数设为 1，或选择 cp2k.ssmp.exe。</translation>
+    </message>
+    <message>
+      <location filename="catalog_sources.py" line="2085" />
+      <source>Start Calculation</source>
+      <comment>winrun.start</comment>
+      <translation>开始计算</translation>
+    </message>
+    <message>
+      <location filename="catalog_sources.py" line="2087" />
+      <source>Native CP2K started. A separate terminal follows output.out. Check the real CP2K exit code and output; startup does not prove convergence. Closing Studio or the monitor does not stop the calculation.</source>
+      <comment>winrun.started</comment>
+      <translation>原生 CP2K 已启动，独立终端正在跟踪 output.out。请检查真实退出码及输出；启动不代表收敛。关闭 Studio 或监控终端不会终止计算。</translation>
+    </message>
+    <message>
+      <location filename="catalog_sources.py" line="2089" />
+      <source>Cannot open a Windows terminal: {error}</source>
+      <comment>winrun.terminal_error</comment>
+      <translation>无法打开 Windows 终端：{error}</translation>
+    </message>
+    <message>
+      <location filename="catalog_sources.py" line="2091" />
+      <source>OpenMP Threads</source>
+      <comment>winrun.threads</comment>
+      <translation>OpenMP 线程数</translation>
+    </message>
+    <message>
+      <location filename="catalog_sources.py" line="2093" />
+      <source>OpenMP Threads must be a positive integer.</source>
+      <comment>winrun.threads_error</comment>
+      <translation>OpenMP 线程数必须为正整数。</translation>
+    </message>
+    <message>
+      <location filename="catalog_sources.py" line="2095" />
+      <source>Windows terminal requests were sent, but CP2K startup is not confirmed. Inspect both terminals before retrying.</source>
+      <comment>winrun.unconfirmed</comment>
+      <translation>Windows 终端启动请求已发送，但尚未确认 CP2K 启动。请在重试前检查两个终端。</translation>
+    </message>
+    <message>
+      <location filename="catalog_sources.py" line="2097" />
+      <source>Verified CP2K {version} · {mode}</source>
+      <comment>winrun.verified</comment>
+      <translation>已验证 CP2K {version} · {mode}</translation>
+    </message>
+    <message>
+      <location filename="catalog_sources.py" line="2119" />
       <source>Non-periodic Molecule. Check vacuum and Poisson boundaries.</source>
       <comment>xsd.molecule_hint</comment>
       <translation>非周期分子。请检查真空及 Poisson 边界要求。</translation>
@@ -5206,61 +5490,61 @@ Use an insulating, gapped structure with integer occupations. Inspect Berry-phas
 </translation>
     </message>
     <message>
-      <location filename="catalog_sources.py" line="2007" />
+      <location filename="catalog_sources.py" line="2099" />
       <source>Generate Simulation Box…</source>
       <comment>xsd.box_button</comment>
       <translation>生成计算盒…</translation>
     </message>
     <message>
-      <location filename="catalog_sources.py" line="2009" />
+      <location filename="catalog_sources.py" line="2101" />
       <source>A simulation box can only be generated for a nonempty nonperiodic structure.</source>
       <comment>xsd.box_structure</comment>
       <translation>仅可为非空的非周期结构生成计算盒。</translation>
     </message>
     <message>
-      <location filename="catalog_sources.py" line="2011" />
+      <location filename="catalog_sources.py" line="2103" />
       <source>Generate Simulation Box</source>
       <comment>xsd.box_title</comment>
       <translation>生成计算盒</translation>
     </message>
     <message>
-      <location filename="catalog_sources.py" line="2013" />
+      <location filename="catalog_sources.py" line="2105" />
       <source>XSD periodic cell is missing or degenerate; no cell will be invented.</source>
       <comment>xsd.cell</comment>
       <translation>XSD 周期晶胞缺失或退化；程序不会擅自创建晶胞。</translation>
     </message>
     <message>
-      <location filename="catalog_sources.py" line="2015" />
+      <location filename="catalog_sources.py" line="2107" />
       <source>XSD contains no readable atoms.</source>
       <comment>xsd.empty</comment>
       <translation>XSD 中没有可读取的原子。</translation>
     </message>
     <message>
-      <location filename="catalog_sources.py" line="2017" />
+      <location filename="catalog_sources.py" line="2109" />
       <source>Expanded source XSD symmetry with ASE: {sites} asymmetric sites → {atoms} unit-cell atoms. Display images were excluded; the original cell vectors are unchanged.</source>
       <comment>xsd.expanded</comment>
       <translation>已依据源 XSD 对称算符使用 ASE 展开：{sites} 个不对称位点 → {atoms} 个晶胞原子。已排除显示镜像，原始晶胞矢量保持不变。</translation>
     </message>
     <message>
-      <location filename="catalog_sources.py" line="2019" />
+      <location filename="catalog_sources.py" line="2111" />
       <source>Cannot import Materials Studio XSD: {detail}</source>
       <comment>xsd.failed</comment>
       <translation>无法导入 Materials Studio XSD：{detail}</translation>
     </message>
     <message>
-      <location filename="catalog_sources.py" line="2021" />
+      <location filename="catalog_sources.py" line="2113" />
       <source>XSD coordinates, cell vectors and symmetry operators must contain the expected number of finite values.</source>
       <comment>xsd.finite</comment>
       <translation>XSD 坐标、晶胞矢量和对称算符必须包含规定数量的有限数值。</translation>
     </message>
     <message>
-      <location filename="catalog_sources.py" line="2023" />
+      <location filename="catalog_sources.py" line="2115" />
       <source>ASE XSD output does not match the validated elements, coordinate order or cell; import was cancelled.</source>
       <comment>xsd.mismatch</comment>
       <translation>ASE 的 XSD 解析结果与校验后的元素、坐标顺序或晶胞不一致，已取消导入。</translation>
     </message>
     <message>
-      <location filename="catalog_sources.py" line="2025" />
+      <location filename="catalog_sources.py" line="2117" />
       <source>
 Enter a simulation box manually or generate one using the button below.</source>
       <oldsource>
@@ -5270,25 +5554,25 @@ No valid cell was supplied. Enter a box manually or explicitly generate one belo
 请手动填写计算盒，或使用下方按钮生成。</translation>
     </message>
     <message>
-      <location filename="catalog_sources.py" line="2029" />
+      <location filename="catalog_sources.py" line="2121" />
       <source>Periodic Structure · Confirm Periodicity: current PERIODIC {periodic}. ASE cannot reliably infer slab/wire boundaries from XSD; review the selector below. Vacuum size does not change PBC automatically.</source>
       <comment>xsd.periodic_hint</comment>
       <translation>周期结构 · 确认周期性：当前 PERIODIC {periodic}。ASE 无法可靠识别 XSD 中 Slab／链的部分周期性，请检查下方选项；不会根据真空大小自动修改 PBC。</translation>
     </message>
     <message>
-      <location filename="catalog_sources.py" line="2031" />
+      <location filename="catalog_sources.py" line="2123" />
       <source>XSD imports elements, coordinates, cell and readable PBC only. Force fields, bond orders, formal charges, source constraints and display settings are not imported.</source>
       <comment>xsd.properties</comment>
       <translation>XSD 仅导入元素、坐标、晶胞和可识别的周期性；不导入力场、键级、形式电荷、源文件约束及显示设置。</translation>
     </message>
     <message>
-      <location filename="catalog_sources.py" line="2033" />
+      <location filename="catalog_sources.py" line="2125" />
       <source>XSD symmetry operators are incomplete or duplicated for the declared space group; expansion was refused.</source>
       <comment>xsd.symmetry_count</comment>
       <translation>XSD 对称算符对声明的空间群不完整或有重复，已拒绝展开。</translation>
     </message>
     <message>
-      <location filename="catalog_sources.py" line="2035" />
+      <location filename="catalog_sources.py" line="2127" />
       <source>Unsupported XSD layout: expected one Molecule or SymmetrySystem with explicit Atom3d elements and one cell. Modified symmetry images, mixed occupancies and nested systems are not supported.</source>
       <comment>xsd.unsupported</comment>
       <translation>不支持此 XSD 布局：需要单一 Molecule 或 SymmetrySystem、明确的 Atom3d 元素和唯一晶胞。暂不支持已修改的对称镜像、混合占位或嵌套体系。</translation>

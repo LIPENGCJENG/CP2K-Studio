@@ -69,7 +69,7 @@ def test_windows_pe_guard_does_not_detect_or_execute_wsl_linux_binary(tmp_path):
     assert env.inspect_libraries(native, forbidden, 'Windows', {})[0] == []
 
 
-def test_windows_local_run_does_not_invoke_bash_cmd_or_applescript(tmp_path, monkeypatch):
+def test_posix_adapter_does_not_dispatch_windows_to_bash_cmd_or_applescript(tmp_path, monkeypatch):
     for name in ['run.sh','input.inp']:
         (tmp_path / name).write_text('test')
     monkeypatch.setattr('core.local_run.detect_bash', lambda *a: pytest.fail('Bash detection must not run'))
@@ -113,6 +113,7 @@ def fake_bundle(tmp_path):
     app = tmp_path / 'CP2K Studio'
     internal = app / '_internal'; internal.mkdir(parents=True)
     write_pe(app / 'CP2K Studio.exe')
+    write_pe(app / 'cp2k-studio-runner.exe', subsystem=3)
     for name in portable.REQUIRED:
         path = internal / name; path.parent.mkdir(parents=True,exist_ok=True); path.write_bytes(b'test')
     (internal / 'data/cp2k-2026.1/manifest.json').write_text('{"files":{}}')

@@ -3,6 +3,41 @@ from pathlib import Path
 import os
 import sys
 import hashlib
+from contextlib import contextmanager
+from threading import RLock
+
+_dll_lock = RLock()
+
+
+@contextmanager
+def external_dll_search():
+    """Restore the normal Windows child DLL search only while creating a child.
+
+    PyInstaller's SetDllDirectory must not contaminate CP2K/PowerShell. Restore
+    Studio's own process state immediately after Popen, even on a launch error.
+    ErrorMode prevents loader-failure modal boxes during bounded version probes.
+    """
+    if sys.platform != 'win32':
+        yield
+        return
+    import ctypes
+    with _dll_lock:
+        api = ctypes.WinDLL('kernel32', use_last_error=True)
+        api.GetDllDirectoryW.argtypes = [ctypes.c_uint32, ctypes.c_wchar_p]
+        api.SetDllDirectoryW.argtypes = [ctypes.c_wchar_p]
+        buffer = ctypes.create_unicode_buffer(api.GetDllDirectoryW(0, None) + 1)
+        api.GetDllDirectoryW(len(buffer), buffer)
+        previous = buffer.value
+        old_mode = api.GetErrorMode()
+        api.SetErrorMode(old_mode | 0x8003)
+        try:
+            if getattr(sys, 'frozen', False) and not api.SetDllDirectoryW(None):
+                raise ctypes.WinError(ctypes.get_last_error())
+            yield
+        finally:
+            if getattr(sys, 'frozen', False):
+                api.SetDllDirectoryW(previous or None)
+            api.SetErrorMode(old_mode)
 
 
 def resource_path(*parts):

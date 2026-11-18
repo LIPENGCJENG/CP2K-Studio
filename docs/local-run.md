@@ -1,5 +1,7 @@
 # Local Run / 本地运行
 
+Windows Native 新增独立适配器，使用 `cp2k.ssmp.exe` / `cp2k.sopt.exe` 直接计算，不要求或执行 `run.sh`，详细配置、命令及测试范围见 [Windows 本地运行](WINDOWS_LOCAL_RUN.md)。下方 Bash 行为针对 macOS/Linux，保持原有流程。
+
 顶部 Local Run 位于 Environment Check 与 Help 之间。流程为：选择已解压的计算目录 → 检查 → 确认 Run → 打开两个独立系统终端。确认前不执行脚本；只运行自己创建或信任的 `run.sh`。
 
 本工具不读取项目 JSON、不导入结构、不调用综合检查，不改变当前项目、Dirty、预览或视角。只要求目录内有可读的 `run.sh` 和 `input.inp`，本机有 Bash；不要求已有 output.out、data/ 或项目文件。ZIP 须先解压。
@@ -15,7 +17,7 @@ Ctrl+C 或关闭监控不会向计算发送停止信号。关闭 Studio 不终�
 
 - macOS 使用 Terminal.app，固定 AppleScript 接收安全引用的命令参数，每次请求新窗口。可能需要 Automation 权限。拒绝或超时有明确提示，超时后应检查已有终端再重试；不会自动授予权限或使用 sudo。
 - Linux / Rocky Linux 按桌面优先选择 GNOME Terminal、Konsole 或 Xfce Terminal，再尝试其他支持项和 xterm；各有独立 argv 适配。没有图形桌面或可用终端时拒绝启动，不降级为后台计算。
-- Windows / WSL 本版未实现启动适配，不调用 CMD。
+- Windows Native 使用 Windows Terminal 新窗口或独立 PowerShell 控制台及专用 console helper；不调用 CMD/Bash/MPI。WSL 启动仍未提供。
 - Python 源码和 v1.0.0 macOS App 均受支持。打包版本使用 App 自带的独立 cp2k-studio-runner，不再把 GUI 可执行文件当作 Python 解释器。
 
 启动助手副本、参数与收据保存在应用缓存，不进入项目 JSON。macOS 为 `~/Library/Caches/CP2K-Studio/local-run/`；Linux 为 `$XDG_CACHE_HOME/CP2K-Studio/local-run/`，默认 `~/.cache/CP2K-Studio/local-run/`。

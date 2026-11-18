@@ -56,7 +56,7 @@ Qt 图标加载成功不等于 macOS Dock 已显示该图标。直接通过 Pyth
 
 **Environment Check / 环境检测** 打开独立的非模态窗口，异步检查本机 CP2K/MPI、动态链接库、当前 Python 声明依赖和 CPU/内存，支持重新检测、复制报告及中英文切换。版本差异、缺失项或未知项只在本窗口提示，不改变项目、XML、综合检查状态或导出参数。新依赖 `psutil` 和 `packaging` 已加入 requirements.txt；检测本身不会安装任何软件，也不执行计算。详见[环境检测说明与平台限制](docs/environment-check.md)。
 
-**Local Run / 本地运行** 选择已解压的计算目录，检查并确认后打开两个独立系统终端，分别执行原始 `bash run.sh` 和跟踪 `output.out`。不读取项目 JSON 或修改当前项目。支持 macOS Terminal.app 和 Linux 常见图形终端；Windows/WSL 尚未提供启动适配。启动成功不等于 CP2K 计算成功，详细行为及验证限制见[本地运行说明](docs/local-run.md)。
+**Local Run / 本地运行** 选择已解压的计算目录，检查并确认后打开计算和 `output.out` 监控两个独立终端。不读取项目 JSON 或修改当前项目。macOS Terminal.app 和 Linux 图形终端执行原始 `bash run.sh`；[Windows 原生模式](docs/WINDOWS_LOCAL_RUN.md)直接运行 `cp2k.ssmp.exe` / `cp2k.sopt.exe`，可设置仅对子进程生效的 DLL 目录和 OpenMP 线程数，不执行 Bash/MPI/WSL。启动成功不等于 CP2K 计算成功，详细行为及验证限制见[本地运行说明](docs/local-run.md)。
 
 1. **结构与晶胞**：通过 ASE 导入 XSD、CIF、XYZ 或 EXTXYZ。保留真实元素、笛卡尔坐标和完整三斜晶胞。Materials Studio XSD 支持分子、显式晶胞及源对称算符展开；Slab/链的部分周期性需手动确认，不根据真空层自动推断。分子缺少晶胞时可明确选择生成非周期计算盒，导入本身不平移坐标。[XSD 支持范围和真实文件验证](docs/xsd-import.md)。可手动修改晶胞、坐标和 `NONE/X/Y/Z/XY/XZ/YZ/XYZ` 周期性；明确的 XSD Molecule 或经用户确认的孤立分子固定为 NONE，晶胞仍可编辑。结构类型随项目保存，旧项目与普通 XYZ 不自动锁定。坐标表显示元素、x/y/z 及固定状态，隐藏的逐原子 KIND 映射仍参与保存和导出。结构预览默认隐藏元素标签；右上角工具控制标签、实际晶胞 A/B/C 视角和复位。左键拖动空白旋转、单击原子选择（Ctrl/Cmd 切换多选）、右键拖动平移、滚轮缩放；复位同时恢复默认观察中心、角度和缩放。左下角 XYZ 指示笛卡尔方向；非正交晶胞的 ABC 不等于 XYZ。预览不推断化学键，视图操作不改变坐标。大结构仅绘制前 3000 个原子，模型和导出保留全部原子。
 2. **DFT**：明确填写总电荷、自旋多重度、是否 UKS、泛函和 Poisson 求解器；按需要调整网格和 QS 精度。首期支持 PBE、BLYP、PADE。Poisson 下拉框下方提供六种求解器的双语言只读参考表；WAVELET 的二维参考范围限定为 XZ，参考表不改动求解器选择；非周期 WAVELET 的立方盒要求由统一校验器检查。[周期性参考与分子锁定](docs/poisson-periodicity.md)。带电/开壳层体系应自行审查所选物理模型。

@@ -46,10 +46,19 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw 'Build dependency installation failed' }
           python -m pip check
           if ($LASTEXITCODE -ne 0) { throw 'Dependency conflict' }
+      - name: Build harmless native execution test fixture
+        run: |
+          python scripts/build_windows_test_engine.py
+          if ($LASTEXITCODE -ne 0) { throw 'Native test fixture build failed' }
       - name: Run core and Windows compatibility tests
         run: |
           python scripts/test_windows_core.py
           if ($LASTEXITCODE -ne 0) { throw 'Required tests failed' }
+      - name: Test native Local Run Qt contracts offscreen
+        # Qt widget contracts can be tested offscreen; this is not desktop validation.
+        run: |
+          python -m pytest -q tests/test_windows_local_run_ui.py
+          if ($LASTEXITCODE -ne 0) { throw 'Native Local Run UI contracts failed' }
       - name: Build, smoke-test and verify portable ZIP
         run: ./build_windows.ps1
       - name: Upload verified portable package

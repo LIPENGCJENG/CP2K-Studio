@@ -83,6 +83,11 @@ class LocalRunController(QObject):
     def __init__(self, parent, action, *, backend=None):
         super().__init__(parent)
         self.action = action
+        if backend is None:
+            import sys
+            if sys.platform == 'win32':
+                from core.windows_local_run import WindowsLocalRunBackend
+                backend = WindowsLocalRunBackend()
         self.backend = backend or LocalRunBackend()
         self.busy = False
         self._worker = None
@@ -102,6 +107,11 @@ class LocalRunController(QObject):
         if not directory:
             self._set_busy(False)
             return
+        if getattr(self.backend, 'native_windows', False):
+            dialog = getattr(self.parent(), '_environment_dialog', None)
+            report = getattr(dialog, 'report', None)
+            self.backend.detected_paths = tuple(str(item.value) for item in report.items
+                if item.key == 'cp2k.selected') if report is not None else ()
         self._start(lambda: self.backend.inspect(directory), self._inspected)
 
     def _start(self, callback, handler):
@@ -128,14 +138,20 @@ class LocalRunController(QObject):
             self._set_busy(False)
             self._message(i18n_msg('Cannot Start Local Run', code='local.cannot_start'), error, True)
             return
-        dialog = LocalRunConfirmation(package, self.parent())
+        native = getattr(self.backend, 'native_windows', False)
+        if native:
+            from ui.windows_local_run_dialog import WindowsLocalRunDialog
+            dialog = WindowsLocalRunDialog(package, self.backend, self.parent())
+        else:
+            dialog = LocalRunConfirmation(package, self.parent())
         accepted = dialog.exec() == QDialog.DialogCode.Accepted
         if not isValid(self):
             return
         if not accepted:
             self._set_busy(False)
             return
-        self._start(lambda: self.backend.launch(package, confirmed=True), self._launched)
+        selected = dialog.launch_package if native else package
+        self._start(lambda: self.backend.launch(selected, confirmed=True), self._launched)
 
     @Slot(object, object)
     def _launched(self, result, error):
@@ -143,6 +159,16 @@ class LocalRunController(QObject):
         self._set_busy(False)
         if error is not None:
             self._message(i18n_msg('Cannot Start Local Run', code='local.cannot_start'), error, True)
+            return
+        if getattr(self.backend, 'native_windows', False):
+            if result.monitor_error:
+                text = i18n_msg('The calculation terminal opened, but the monitor could not be opened: {error}. Check the existing calculation terminal; do not repeat the calculation to reopen its monitor.', code='winrun.partial', error=result.monitor_error)
+            elif result.script_started:
+                text = i18n_msg('Native CP2K started. A separate terminal follows output.out. Check the real CP2K exit code and output; startup does not prove convergence. Closing Studio or the monitor does not stop the calculation.', code='winrun.started')
+            else:
+                text = i18n_msg('Windows terminal requests were sent, but CP2K startup is not confirmed. Inspect both terminals before retrying.', code='winrun.unconfirmed')
+            self._message(i18n_msg('Local Run', code='local.button'), text,
+                          bool(result.monitor_error) or not result.script_started)
             return
         if result.monitor_error:
             text = i18n_msg('The calculation terminal was opened, but the output monitor could not be opened: {error}\n\nThe script may already be running. Check the calculation terminal; do not start it again just to open a monitor.', code='local.partial', error=result.monitor_error)

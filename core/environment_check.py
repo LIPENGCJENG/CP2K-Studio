@@ -7,7 +7,7 @@ from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from importlib import metadata
 from pathlib import Path
-from core.resources import resource_path, external_environment
+from core.resources import resource_path, external_environment, external_dll_search
 from core.windows_executable import is_native_windows_program
 import os
 import platform
@@ -111,8 +111,9 @@ class CommandRunner:
         try:
             with tempfile.TemporaryDirectory(prefix='cp2k-env-probe-') as directory, tempfile.TemporaryFile() as output:
                 options = {'start_new_session': True} if os.name == 'posix' else {'creationflags': subprocess.CREATE_NO_WINDOW}
-                proc = subprocess.Popen(list(map(str, argv)), stdin=subprocess.DEVNULL, stdout=output,
-                    stderr=subprocess.STDOUT, shell=False, cwd=directory, env=self.environ, **options)
+                with external_dll_search():
+                    proc = subprocess.Popen(list(map(str, argv)), stdin=subprocess.DEVNULL, stdout=output,
+                        stderr=subprocess.STDOUT, shell=False, cwd=directory, env=self.environ, **options)
                 deadline = time.monotonic() + (self.timeout if timeout is None else timeout)
                 status = 'ok'
                 while proc.poll() is None:
@@ -153,6 +154,8 @@ def candidate_directories(environ, system, prefix=None, home=None):
             '/usr/local/bin', '/usr/local/opt/cp2k/bin', '/usr/bin']))
     elif system == 'Linux':
         folders.extend(map(Path, ['/usr/local/bin','/usr/bin','/bin','/opt/cp2k/bin','/usr/local/cp2k/bin']))
+    elif system == 'Windows':
+        folders.append(Path('C:/msys64/ucrt64/bin'))
     if getattr(sys, 'frozen', False):
         internal = Path(sys.executable).resolve().parent
         if system == 'Darwin':
@@ -437,6 +440,12 @@ class EnvironmentDetector:
         self.config=run_environment.model_copy(deep=True)
         self.environ=dict(os.environ if environ is None else environ)
         self.system=system or platform.system()
+        if self.system == 'Windows':
+            from core.windows_run_config import load_settings, guess_dll_directory, runtime_environment, WindowsRunSettings
+            saved = load_settings()
+            self.environ = runtime_environment(WindowsRunSettings(saved.executable,
+                guess_dll_directory(saved.executable, saved.dll_directory), saved.omp_threads), self.environ)
+            known_paths = (*known_paths, *([saved.executable] if saved.executable else []))
         self.cancel=cancel or threading.Event()
         self.runner=runner or CommandRunner(self.cancel,self.environ)
         self.root=Path(root);self.directories=directories;self.known_paths=known_paths
