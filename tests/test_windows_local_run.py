@@ -269,17 +269,19 @@ def test_custom_relative_cache_and_preferences_are_resolved_before_entering_pack
     assert backend.cache==tmp_path/'cache' and backend.settings_file==tmp_path/'settings.json'
 
 
-def test_native_log_follower_tail_creation_truncation_and_replacement(tmp_path):
+@pytest.mark.parametrize('newline',['\n','\r\n'],ids=['LF','CRLF'])
+def test_native_log_follower_tail_creation_truncation_and_replacement(tmp_path,newline):
     file=tmp_path/'output.out'
     follower=shared.LogFollower(file)
     assert follower.poll()==''
-    file.write_text(''.join(f'{n}\n' for n in range(35)))
-    assert follower.poll()==''.join(f'{n}\n' for n in range(5,35))
-    file.write_text('new run\n')
-    assert follower.poll()=='new run\n'
-    replacement=tmp_path/'replacement'; replacement.write_text('replacement\n')
+    # Control the on-disk bytes instead of relying on host newline conversion.
+    file.write_bytes(''.join(f'{n}{newline}' for n in range(35)).encode('utf-8'))
+    assert follower.poll()==''.join(f'{n}{newline}' for n in range(5,35))
+    file.write_bytes(f'new run{newline}'.encode('utf-8'))
+    assert follower.poll()==f'new run{newline}'
+    replacement=tmp_path/'replacement'; replacement.write_bytes(f'replacement{newline}'.encode('utf-8'))
     replacement.replace(file)
-    assert follower.poll()=='replacement\n'
+    assert follower.poll()==f'replacement{newline}'
 
 
 def test_new_log_after_confirmation_is_not_overwritten_silently(folder,setup):
