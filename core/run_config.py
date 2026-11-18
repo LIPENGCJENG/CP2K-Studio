@@ -13,7 +13,7 @@ MAX_PARALLEL = 2_147_483_647
 class RunEnvironment(BaseModel):
     model_config = ConfigDict(extra='forbid', validate_assignment=True)
     operating_system: Literal['linux', 'macos', 'wsl2'] = 'linux'
-    mpi_processes: int = Field(default=16, strict=True, ge=1, le=MAX_PARALLEL)
+    mpi_processes: int = Field(default=1, strict=True, ge=1, le=MAX_PARALLEL)
     omp_threads: int = Field(default=1, strict=True, ge=1, le=MAX_PARALLEL)
 
     @property
@@ -68,5 +68,5 @@ def migrate_run_environment(data):
         notices.append(i18n_msg('Converted legacy total_cpu_cores / omp_threads to MPI processes; verify runtime settings.', code='studio.dda2f26a5f277437'))
     else:
         value['run_environment'] = RunEnvironment().model_dump()
-        notices.append(i18n_msg('Legacy runtime resources could not be converted reliably. Using Linux, MPI=16, OpenMP=1; review step 07.', code='studio.b08cfdf9dc4df1ce'))
+        notices.append(i18n_msg('Legacy runtime resources could not be converted reliably. Using Linux, MPI=1, OpenMP=1; review step 07.', code='studio.b08cfdf9dc4df1ce'))
     return value, notices

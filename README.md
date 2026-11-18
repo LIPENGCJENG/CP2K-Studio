@@ -64,7 +64,7 @@ Qt 图标加载成功不等于 macOS Dock 已显示该图标。直接通过 Pyth
 4. **基组与赝势**：在第 05 页按真实元素从下拉列表选择 `BASIS_SET`、`POTENTIAL`；输入关键字可搜索名称和 Alias。可按质量、来源、XC 和 q 筛选。选择后自动记录真实文件、版本、SHA-256，并立即更新预览。下拉框失焦时只保留实际选项，搜索文本不会变成任意参数。
 5. **GLOBAL / 第 06 页任务设置**：设置项目名和运行类型。`GEO_OPT` 时生成 `MOTION/GEO_OPT`，支持 BFGS、LBFGS、CG、最大迭代数及力/位移阈值。ENERGY 时不生成 MOTION，第 06 页显示不适用并停用编辑，保留已有参数。选择 `VIBRATIONAL_ANALYSIS` 后第 06 页切换为振动分析，始终计算频率和简正模式，IR/Raman 独立勾选且可同时计算；支持分子及 XYZ 绝缘体 Γ 点超胞的实验性周期光谱路径；生成顶层 Section，分别保留各任务参数。详见[振动与光谱说明](docs/vibrational-analysis.md)。Raman 提供与 SCF/OT 独立的[LINRES 预条件器和能隙估计](docs/raman-linres.md)。
 6. **顶部 XML 设置**：点击「XML 规范」查看版本、来源、路径、加载状态，选择自定义 2026.1 XML 或恢复内置规范；确认前检查版本。切换规范会更新校验服务，不修改计算参数和预览内容。
-7. **第 07 步：运行环境**：选择 Linux / Rocky Linux、macOS 或 Windows / WSL2，设置 MPI 进程数和每进程 OpenMP 线程数。默认 Linux、16 MPI、1 OpenMP。自动显示逻辑执行槽位和运行类型，不检测本机硬件，也不直接启动计算。
+7. **第 07 步：运行环境**：选择 Linux / Rocky Linux、macOS 或 Windows / WSL2，设置 MPI 进程数和每进程 OpenMP 线程数。默认 Linux、1 MPI、1 OpenMP。自动显示逻辑执行槽位和运行类型，不检测本机硬件，也不直接启动计算。
 8. **第 08 步：导出与预设**：点击「综合检查」，后台依次执行配置完整性、当前生成 INP 的 XML 校验、最终依赖文件及计算包运行配置检查；自动切换到右侧校验报告。可单独导出 `.inp`、导出计算包，或保存当前设置为个人预设。导出前必须补齐必需信息并通过 XML 语法校验。
 
 第 01 页支持原子整行多选、固定分量及按笛卡尔 X/Y/Z 坐标范围选择。选择只高亮，不自动固定；固定后显示状态列及 3D 标记，GEO_OPT 自动生成 `MOTION/CONSTRAINT/FIXED_ATOMS`。固定分量遵循 CP2K 的**分数坐标**定义，与范围筛选的笛卡尔轴独立；详情和修改清单见[原子固定说明](docs/atom-constraints.md)。

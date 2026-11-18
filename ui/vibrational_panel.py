@@ -61,8 +61,13 @@ class VibrationalPanel(FormPanel):
             '• NPROC_REP = 16: 1 replica using 16 MPI processes.\n\n'
             'Recommendations:\n'
             'NPROC_REP must be a positive integer and should normally divide the total MPI process count exactly.\n\n'
-            'Running multiple replicas concurrently may increase total memory use. If an out-of-memory (OOM) error occurs, reduce the total MPI process count, or increase NPROC_REP to reduce the number of concurrent replicas.',
+            'Running multiple replicas concurrently may increase total memory use. If an out-of-memory (OOM) error occurs, reduce the total MPI process count, or increase NPROC_REP to reduce the number of concurrent replicas.\n\n'
+            'OpenMP-only: NPROC_REP must be 1.',
             code='vib.nproc_help'))
+        self.nproc_help.setText('!')
+        self.nproc_help.setStyleSheet(self.nproc_help.styleSheet() +
+            f'QLabel#helpIcon {{ background-color:{COLORS["error"]}; color:{COLORS["input"]}; '
+            'border-radius:8px; font-size:12px; font-weight:bold; }')
         label_row = QHBoxLayout()
         label_row.setSpacing(6)
         label_row.addWidget(self.nproc_label, 0, Qt.AlignmentFlag.AlignVCenter)

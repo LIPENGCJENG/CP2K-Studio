@@ -258,7 +258,7 @@ class VibrationalConfig(Model):
     ir_enabled: bool = Field(default=False, strict=True)
     raman_enabled: bool = Field(default=False, strict=True)
     dx: float = Field(default=0.01, gt=0)
-    nproc_rep: int = Field(default=4, strict=True, ge=1)
+    nproc_rep: int = Field(default=1, strict=True, ge=1)
     proc_dist_type: Literal['BLOCKED', 'INTERLEAVED'] = 'BLOCKED'
     fully_periodic: bool = False
     thermochemistry: bool = False

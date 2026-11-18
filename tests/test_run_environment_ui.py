@@ -25,7 +25,8 @@ def test_navigation_live_resources_and_save_restore_without_command_preview(app,
     assert not panel.findChildren(QPlainTextEdit) and not panel.findChildren(QPushButton)
     assert [label.text() for label in panel.findChildren(QLabel)].count('目标操作系统') == 1
     assert panel.mpi_processes.minimum() == 1 and panel.omp_threads.minimum() == 1
-    assert panel.cpu_slots.text() == '16' and panel.mode.text() == '纯 MPI'
+    assert panel.mpi_processes.value() == panel.omp_threads.value() == 1
+    assert panel.cpu_slots.text() == '1' and panel.mode.text() == '纯 MPI'
     export = window.export_panel
     cards = {card.title_label.text(): card for card in export.findChildren(SectionCard)}
     status_card, export_card = cards['当前配置状态'], cards['导出 CP2K Input']
@@ -73,7 +74,7 @@ def test_legacy_warning_nonblocking_and_invalid_project_keeps_current(app, water
     path.write_text(json.dumps(data))
     window._open_path(path)
     assert window.project.structure == water.structure
-    assert window.run_panel.mpi_processes.value() == 16
+    assert window.run_panel.mpi_processes.value() == 1
     assert '无法可靠换算' in window.report.toPlainText()
     window.refresh()
     assert '无法可靠换算' in window.report.toPlainText()

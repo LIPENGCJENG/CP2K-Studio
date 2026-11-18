@@ -27,6 +27,7 @@ def test_top_level_xml_and_required_properties(vib_project, validator, mode):
     set_model_spectra(p.vibrational, mode)
     p.vibrational.dx = .005
     p.vibrational.nproc_rep = 4
+    p.run_environment.mpi_processes = 16
     p.vibrational.proc_dist_type = 'INTERLEAVED'
     p.vibrational.hessian = True
     p.structure.positions[0] = (.1234567890123, 0, -.065587123456)

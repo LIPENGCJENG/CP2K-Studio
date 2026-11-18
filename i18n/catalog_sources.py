@@ -763,7 +763,7 @@ def catalog_sources():
         QCoreApplication.translate("CP2KStudio", 'Included', 'studio.107319b8b39da106'),
         # ui/main_window.py:493
         QCoreApplication.translate("CP2KStudio", 'Running comprehensive validation…', 'studio.108b77566772f0c8'),
-        # ui/run_environment_panel.py:43
+        # ui/run_environment_panel.py:44
         QCoreApplication.translate("CP2KStudio", 'Required Logical Cores', 'studio.10d9ce32248249c0'),
         # ui/recommendation_dialog.py:187
         QCoreApplication.translate("CP2KStudio", '{p0} / {p1}', 'studio.1110bdd690bab3e7'),
@@ -841,7 +841,7 @@ def catalog_sources():
         QCoreApplication.translate("CP2KStudio", 'KIND {p0}: basis or pseudopotential name is empty or contains invalid characters', 'studio.207ab9fea7e8c88c'),
         # core/input_import.py:83
         QCoreApplication.translate("CP2KStudio", 'Only embedded COORD or a single-frame XYZ reference is supported', 'studio.20ea6c884343dc6f'),
-        # ui/run_environment_panel.py:36
+        # ui/run_environment_panel.py:37
         QCoreApplication.translate("CP2KStudio", 'OpenMP Threads per Process', 'studio.2151e9c4f0a07820'),
         # ui/forms.py:141
         QCoreApplication.translate("CP2KStudio", '{p0}: enter a valid number', 'studio.217fa2782cc1be44'),
@@ -1053,7 +1053,7 @@ def catalog_sources():
         QCoreApplication.translate("CP2KStudio", 'User-declared version; not certified as official data', 'studio.4f59e1eb8a7cbb90'),
         # ui/main_window.py:381
         QCoreApplication.translate("CP2KStudio", 'Parameters changed; validation is out of date. Click “Validate Configuration” again.', 'studio.508380ae2a94a6f3'),
-        # ui/run_environment_panel.py:35
+        # ui/run_environment_panel.py:36
         QCoreApplication.translate("CP2KStudio", 'MPI Processes', 'studio.50867c721b9898fe'),
         # core/presets.py:103
         QCoreApplication.translate("CP2KStudio", 'Single-Point Preset', 'studio.5091f86f26dfeeeb'),
@@ -1167,7 +1167,7 @@ def catalog_sources():
         QCoreApplication.translate("CP2KStudio", 'Target Operating System', 'studio.647b20d8b66de930'),
         # ui/coordinate_range_dialog.py:14
         QCoreApplication.translate("CP2KStudio", 'Select Atoms by Coordinate Range', 'studio.6486ad9312cad7fc'),
-        # ui/run_environment_panel.py:92
+        # ui/run_environment_panel.py:93
         QCoreApplication.translate("CP2KStudio", 'run_environment: {p0}', 'studio.649058b14d12527e'),
         # ui/xml_dialog.py:39
         QCoreApplication.translate("CP2KStudio", 'Schema Version', 'studio.64f58bcd239b5eb0'),
@@ -1237,7 +1237,7 @@ def catalog_sources():
         QCoreApplication.translate("CP2KStudio", 'Cannot confirm automatically', 'studio.76835fdb33c70096'),
         # core/validator.py:63
         QCoreApplication.translate("CP2KStudio", 'POISSON: MT supports only 0D or 2D systems', 'studio.76ff8199fee0aa41'),
-        # ui/run_environment_panel.py:38
+        # ui/run_environment_panel.py:39
         QCoreApplication.translate("CP2KStudio", 'Logical Execution Slots', 'studio.77f1e559989ef41f'),
         # core/models.py:90
         QCoreApplication.translate("CP2KStudio", 'Atom IDs must be unique positive integers corresponding to this structure', 'studio.78d4e2923e2ab09d'),
@@ -1363,7 +1363,7 @@ def catalog_sources():
         QCoreApplication.translate("CP2KStudio", 'Required, e.g. PBE · OT · Geometry Optimization', 'studio.929111cca381af37'),
         # ui/main_window.py:746
         QCoreApplication.translate("CP2KStudio", 'Cannot Export This Configuration', 'studio.92c4fbdb0e47bd8e'),
-        # ui/run_environment_panel.py:74
+        # ui/run_environment_panel.py:75
         QCoreApplication.translate("CP2KStudio", '{p0}: enter the package folder in a Bash terminal and run bash run.sh.', 'studio.92d64f06f8ed50d9'),
         # core/models.py:95
         QCoreApplication.translate("CP2KStudio", 'The structure contains invalid elements or dummy atoms', 'studio.92f32b7edc292e79'),
@@ -1502,7 +1502,7 @@ def catalog_sources():
         # core/potential_database.py:92
         QCoreApplication.translate("CP2KStudio", 'No valid pseudopotential entry header found', 'studio.b07ddd79efca277a'),
         # core/run_config.py:71
-        QCoreApplication.translate("CP2KStudio", 'Legacy runtime resources could not be converted reliably. Using Linux, MPI=16, OpenMP=1; review step 07.', 'studio.b08cfdf9dc4df1ce'),
+        QCoreApplication.translate("CP2KStudio", 'Legacy runtime resources could not be converted reliably. Using Linux, MPI=1, OpenMP=1; review step 07.', 'studio.b08cfdf9dc4df1ce'),
         # core/comprehensive_check.py:106
         QCoreApplication.translate("CP2KStudio", 'Configuration completeness has blocking errors; a complete INP cannot be generated. Correct the first-stage issues first.', 'studio.b0d1609276358f00'),
         # ui/kind_panel.py:161
@@ -1591,7 +1591,7 @@ def catalog_sources():
         QCoreApplication.translate("CP2KStudio", 'CP2K (*.inp *.restart);;All Files (*)', 'studio.c2dfd14c0296c58b'),
         # core/bundle_checks.py:57
         QCoreApplication.translate("CP2KStudio", "KIND {p0}: the final INP's {p1} file does not contain the required {p2} / {p3} entry. Check data sources and file order, then reselect the entry.", 'studio.c3197cd5d0c68893'),
-        # ui/run_environment_panel.py:49
+        # ui/run_environment_panel.py:50
         QCoreApplication.translate("CP2KStudio", 'The target environment must provide mpirun and cp2k.psmp on PATH with compatible MPI implementations.', 'studio.c3a93b0864d416e9'),
         # core/comprehensive_check.py:61
         QCoreApplication.translate("CP2KStudio", 'Validation Completed with Warnings', 'studio.c4fb32fba754cd3f'),
@@ -1831,7 +1831,7 @@ def catalog_sources():
         QCoreApplication.translate("CP2KStudio", 'Restore Default XML', 'studio.f08618fa6f089d26'),
         # core/atom_constraints.py:16
         QCoreApplication.translate("CP2KStudio", 'Minimum and maximum must be valid numbers (scientific notation is supported)', 'studio.f0902162e8a7f393'),
-        # ui/run_environment_panel.py:73
+        # ui/run_environment_panel.py:74
         QCoreApplication.translate("CP2KStudio", 'Windows / WSL2: run bash run.sh in the WSL2 Linux terminal; Bash commands do not run directly in native PowerShell.', 'studio.f0bf6628232e46da'),
         # ui/validation_state.py:18
         QCoreApplication.translate("CP2KStudio", 'Checking parameters', 'studio.f10d1173404b37af'),
@@ -1849,7 +1849,7 @@ def catalog_sources():
         QCoreApplication.translate("CP2KStudio", 'Current XC', 'studio.f2be0d642eeb4969'),
         # ui/preset_dialogs.py:147
         QCoreApplication.translate("CP2KStudio", ' · Complete / Not Certified', 'studio.f3501a1d2d983a3d'),
-        # ui/run_environment_panel.py:38
+        # ui/run_environment_panel.py:39
         QCoreApplication.translate("CP2KStudio", 'MPI × OpenMP; this is not the physical core count and does not allocate resources.', 'studio.f37272c3d72c4a4a'),
         # core/database_manager.py:174
         QCoreApplication.translate("CP2KStudio", 'Official User', 'studio.f5a0cfe232dd30b2'),
@@ -1857,7 +1857,7 @@ def catalog_sources():
         QCoreApplication.translate("CP2KStudio", 'Higher-quality candidate', 'studio.f65e68836452626e'),
         # ui/database_dialog.py:35
         QCoreApplication.translate("CP2KStudio", 'Priority: specified folder → local installation → verified official cache. Unknown or different versions are never mixed silently.\nThe bundled cache is from official v2026.1; startup does not access the network. A user-declared version is not official certification.', 'studio.f66b15184e610044'),
-        # ui/run_environment_panel.py:44
+        # ui/run_environment_panel.py:45
         QCoreApplication.translate("CP2KStudio", 'Execution Mode', 'studio.f6c67c56f2637ff4'),
         # ui/main_window.py:667
         QCoreApplication.translate("CP2KStudio", 'Correct the invalid fields first:\n', 'studio.f7dfcbf254ddad12'),
@@ -1885,9 +1885,9 @@ def catalog_sources():
         QCoreApplication.translate("CP2KStudio", 'Database Settings', 'studio.ff513eba23a1b94e'),
         # core/comprehensive_check.py:58
         QCoreApplication.translate("CP2KStudio", 'Info · ', 'validation.info_prefix'),
-        # ui/vibrational_panel.py:79
+        # ui/vibrational_panel.py:84
         QCoreApplication.translate("CP2KStudio", 'Thermochemistry is optional and only applies to isolated gas-phase molecules. Temperature is in K and pressure in Pa. Molden and Hessian files are produced by CP2K after running; the Hessian file is binary.', 'vib.advanced_help'),
-        # ui/vibrational_panel.py:78
+        # ui/vibrational_panel.py:83
         QCoreApplication.translate("CP2KStudio", 'Thermochemistry & Output', 'vib.advanced_title'),
         # ui/vibrational_panel.py:26
         QCoreApplication.translate("CP2KStudio", '✓ Frequencies & Normal Modes', 'vib.always_frequencies'),
@@ -1901,7 +1901,7 @@ def catalog_sources():
         QCoreApplication.translate("CP2KStudio", 'Finite Differences & Replicas', 'vib.basic_title'),
         # core/vibrational.py:120
         QCoreApplication.translate("CP2KStudio", 'VIBRATIONAL_ANALYSIS / IR: MOMENTS uses the Berry-phase dipole operator with MAX_MOMENT 1. Polarization is defined modulo a lattice-dependent quantum; inspect branch continuity across finite displacements and test DX, SCF and grid convergence.', 'vib.berry_branch_info'),
-        # ui/vibrational_panel.py:198
+        # ui/vibrational_panel.py:203
         QCoreApplication.translate("CP2KStudio", 'IR + Raman: dipole moments and polarizabilities use one Hessian workflow. Raman requires closed-shell OT without smearing/ADDED_MOS; response and intensity convergence require a CP2K run.', 'vib.combined_note'),
         # ui/export_panel.py:30
         QCoreApplication.translate("CP2KStudio", '06 Vibrational Analysis', 'vib.error_page'),
@@ -1909,11 +1909,11 @@ def catalog_sources():
         QCoreApplication.translate("CP2KStudio", '7. VIBRATIONAL ANALYSIS\nMode: {mode}\nDX: {dx} bohr; NPROC_REP: {ranks} MPI ranks per replica (not replica count).\nMOLDEN_VIB: {molden}; HESSIAN: {hessian}.\nAfter a successful CP2K calculation, output.out contains frequencies and, when requested, IR/Raman intensities. MOLDEN_VIB writes normal modes for Molden; HESSIAN writes a CP2K binary .hess file. Actual filenames follow CP2K project/print conventions. No spectrum image or broadened spectrum is generated by Studio.\nNo results are included: CP2K has not run. Use a tightly optimized stationary structure and test SCF, grid, displacement and response convergence. Saved GEO_OPT fixed atoms are ignored; all atoms enter the full Hessian. IR/Raman response has not been numerically verified by Studio. XML validity does not establish a successful intensity calculation.\n', 'vib.export_notes'),
         # core/vibrational.py:132
         QCoreApplication.translate("CP2KStudio", 'VIBRATIONAL_ANALYSIS: saved GEO_OPT fixed-atom constraints are not applied. A full Hessian of all atoms will be computed; partial/constrained vibrational analysis is not implemented.', 'vib.fixed_warning'),
-        # ui/vibrational_panel.py:201
+        # ui/vibrational_panel.py:206
         QCoreApplication.translate("CP2KStudio", 'Use tightly optimized coordinates. Frequencies and normal modes do not certify an energy minimum; check imaginary modes and convergence.', 'vib.frequencies_note'),
-        # ui/vibrational_panel.py:77
+        # ui/vibrational_panel.py:82
         QCoreApplication.translate("CP2KStudio", 'FULLY_PERIODIC prevents removal of rotational modes from the Hessian. It is usually appropriate for a 3D periodic crystal, but does not set CELL/PERIODIC or select a dipole operator. Review it explicitly; Studio never changes this option automatically.', 'vib.fully_periodic_help'),
-        # ui/vibrational_panel.py:86
+        # ui/vibrational_panel.py:91
         QCoreApplication.translate("CP2KStudio", 'Write Binary Hessian', 'vib.hessian'),
         # core/input_import.py:202
         QCoreApplication.translate("CP2KStudio", 'VIBRATIONAL_ANALYSIS import requires at least one enabled IR or Raman property workflow when INTENSITIES is enabled. Required properties cannot be omitted.', 'vib.import_intensities'),
@@ -1921,7 +1921,7 @@ def catalog_sources():
         QCoreApplication.translate("CP2KStudio", 'VIBRATIONAL_ANALYSIS import supports only the full Hessian; MODE_SELECTIVE cannot be represented by this workflow.', 'vib.import_selective'),
         # ui/vibrational_panel.py:33
         QCoreApplication.translate("CP2KStudio", 'IR Intensities', 'vib.ir'),
-        # ui/vibrational_panel.py:200
+        # ui/vibrational_panel.py:205
         QCoreApplication.translate("CP2KStudio", 'IR: isolated molecules use the nonperiodic dipole operator; XYZ uses Berry-phase dipole moments. Partial periodicity is not supported for intensities.', 'vib.ir_note'),
         # core/vibrational.py:63
         QCoreApplication.translate("CP2KStudio", 'VIBRATIONAL_ANALYSIS: periodic spectra currently support only the implicit Gamma-point Quickstep/GPW supercell workflow. Explicit KPOINTS with Berry-phase moments or LINRES have not been validated and cannot be imported or exported by Studio.', 'vib.kpoints_error'),
@@ -1929,15 +1929,15 @@ def catalog_sources():
         QCoreApplication.translate("CP2KStudio", 'VIBRATIONAL_ANALYSIS: unknown legacy mode {mode}; the IR/Raman switches cannot be migrated safely.', 'vib.legacy_mode_error'),
         # core/models.py:289
         QCoreApplication.translate("CP2KStudio", 'VIBRATIONAL_ANALYSIS / LINRES / ENERGY_GAP: enter a finite positive real number in Ha.', 'vib.linres_energy_gap_error'),
-        # ui/vibrational_panel.py:122
+        # ui/vibrational_panel.py:127
         QCoreApplication.translate("CP2KStudio", 'LINRES / ENERGY_GAP\n\nEstimated electronic gap used by the linear-response preconditioner, in Hartree (Ha). This parameter is independent of SCF/OT ENERGY_GAP.\n\n• CP2K default: 0.2 Ha.\n• With FULL_ALL, ENERGY_GAP should underestimate the actual HOMO–LUMO gap.\n• Smaller values such as 0.001–0.01 Ha may be tested for insulating systems.\n• An excessively large estimate may reduce preconditioning efficiency or destabilize convergence.\n• The optimal value depends on the electronic structure; smaller values are not guaranteed to converge faster.\n\nWhen PRECONDITIONER is NONE, ENERGY_GAP does not provide a preconditioning effect.', 'vib.linres_energy_gap_help'),
         # core/vibrational.py:102
         QCoreApplication.translate("CP2KStudio", 'VIBRATIONAL_ANALYSIS / LINRES / FULL_ALL: ENERGY_GAP should underestimate the actual HOMO–LUMO gap. This estimate is independent of SCF/OT ENERGY_GAP; test response convergence. Preconditioning does not guarantee convergence or verify periodic Raman runtime support.', 'vib.linres_full_all_info'),
         # core/models.py:278
         QCoreApplication.translate("CP2KStudio", 'VIBRATIONAL_ANALYSIS / LINRES / PRECONDITIONER: select NONE, FULL_ALL, FULL_SINGLE_INVERSE, FULL_SINGLE, FULL_KINETIC or FULL_S_INVERSE.', 'vib.linres_preconditioner_error'),
-        # ui/vibrational_panel.py:110
+        # ui/vibrational_panel.py:115
         QCoreApplication.translate("CP2KStudio", 'LINRES / PRECONDITIONER\n\nControls preconditioning for Raman linear-response calculations. This setting is independent of the SCF/OT preconditioner.\n\n• NONE: No preconditioning; CP2K default.\n• FULL_ALL: Often effective, but relatively expensive to construct.\n• FULL_SINGLE_INVERSE: Useful for larger systems.\n• FULL_SINGLE: Diagonalization-based preconditioning.\n• FULL_KINETIC: Fast construction and useful for large systems.\n• FULL_S_INVERSE: Overlap-matrix-based preconditioning.\n\nFor unstable periodic Raman response calculations, FULL_ALL may be tested together with a suitable ENERGY_GAP. Convergence is not guaranteed.', 'vib.linres_preconditioner_help'),
-        # ui/vibrational_panel.py:104
+        # ui/vibrational_panel.py:109
         QCoreApplication.translate("CP2KStudio", 'Raman Linear Response', 'vib.linres_title'),
         # core/vibrational.py:106
         QCoreApplication.translate("CP2KStudio", 'VIBRATIONAL_ANALYSIS / Raman: LINRES EPS is looser than 1e-7; test polarizability-response convergence.', 'vib.linres_warning'),
@@ -1945,21 +1945,21 @@ def catalog_sources():
         QCoreApplication.translate("CP2KStudio", 'Frequencies and normal modes are always computed. IR dipole moments and Raman linear-response polarizabilities can be enabled independently or together in one Hessian workflow. NONE uses molecular operators; XYZ uses Berry-phase operators for insulating Gamma-point supercells. Partial-periodic spectra are not supported. Use a stationary structure and converged forces.', 'vib.mode_help'),
         # ui/vibrational_panel.py:21
         QCoreApplication.translate("CP2KStudio", 'Calculation Mode', 'vib.mode_title'),
-        # ui/vibrational_panel.py:85
+        # ui/vibrational_panel.py:90
         QCoreApplication.translate("CP2KStudio", 'Write Molden Vibrations', 'vib.molden'),
         # core/presets.py:184
         QCoreApplication.translate("CP2KStudio", 'Vibrational Analysis', 'vib.name'),
         # ui/main_window.py:336
         QCoreApplication.translate("CP2KStudio", '06  Vibrational Analysis', 'vib.nav'),
         # ui/vibrational_panel.py:54
-        QCoreApplication.translate("CP2KStudio", 'NPROC_REP · MPI Parallel Settings\n\nNPROC_REP is the number of MPI processes per vibrational replica, not the total MPI process count.\n\nNumber of replicas = total MPI processes ÷ NPROC_REP\n\nFor a total of 16 MPI processes:\n• NPROC_REP = 4: 4 replicas, each using 4 MPI processes.\n• NPROC_REP = 8: 2 replicas, each using 8 MPI processes.\n• NPROC_REP = 16: 1 replica using 16 MPI processes.\n\nRecommendations:\nNPROC_REP must be a positive integer and should normally divide the total MPI process count exactly.\n\nRunning multiple replicas concurrently may increase total memory use. If an out-of-memory (OOM) error occurs, reduce the total MPI process count, or increase NPROC_REP to reduce the number of concurrent replicas.', 'vib.nproc_help'),
+        QCoreApplication.translate("CP2KStudio", 'NPROC_REP · MPI Parallel Settings\n\nNPROC_REP is the number of MPI processes per vibrational replica, not the total MPI process count.\n\nNumber of replicas = total MPI processes ÷ NPROC_REP\n\nFor a total of 16 MPI processes:\n• NPROC_REP = 4: 4 replicas, each using 4 MPI processes.\n• NPROC_REP = 8: 2 replicas, each using 8 MPI processes.\n• NPROC_REP = 16: 1 replica using 16 MPI processes.\n\nRecommendations:\nNPROC_REP must be a positive integer and should normally divide the total MPI process count exactly.\n\nRunning multiple replicas concurrently may increase total memory use. If an out-of-memory (OOM) error occurs, reduce the total MPI process count, or increase NPROC_REP to reduce the number of concurrent replicas.\n\nOpenMP-only: NPROC_REP must be 1.', 'vib.nproc_help'),
         # core/vibrational.py:117
         QCoreApplication.translate("CP2KStudio", 'VIBRATIONAL_ANALYSIS: the implemented periodic Berry-phase intensity workflow requires integer, fully occupied orbitals, without smearing or ADDED_MOS. Metallic or fractionally occupied configurations are not supported; settings have not been changed.', 'vib.occupations_error'),
         # ui/vibrational_panel.py:18
         QCoreApplication.translate("CP2KStudio", '06 · Vibrational Analysis', 'vib.page_title'),
         # core/vibrational.py:114
         QCoreApplication.translate("CP2KStudio", 'VIBRATIONAL_ANALYSIS: {mode} with partial periodicity {periodic} is not supported by Studio. Intensity workflows support NONE (molecular operators) or XYZ (Berry-phase operators); boundary conditions have not been changed.', 'vib.partial_spectra_error'),
-        # ui/vibrational_panel.py:187
+        # ui/vibrational_panel.py:192
         QCoreApplication.translate("CP2KStudio", 'Periodic IR + Raman: Berry-phase dipole moments and periodic polarizability response share one vibrational analysis.', 'vib.periodic_combined_hint'),
         # core/vibrational.py:118
         QCoreApplication.translate("CP2KStudio", 'VIBRATIONAL_ANALYSIS: periodic {mode} is experimental support for insulating, gapped 3D Quickstep/GPW Gamma-point supercells. Static configuration cannot establish an electronic gap or CP2K build support. XML validity is not a successful numerical intensity calculation; this workflow has not been numerically verified by Studio.', 'vib.periodic_experimental_info'),
@@ -1967,21 +1967,21 @@ def catalog_sources():
         QCoreApplication.translate("CP2KStudio", 'Periodic intensity path: {mode}, CELL/PERIODIC XYZ, Quickstep/GPW with implicit Gamma-point sampling. IR uses MOMENTS/PERIODIC T and MAX_MOMENT 1; Raman uses LINRES/POLAR/PERIODIC_DIPOLE_OPERATOR T. IR and Raman are independent options; when both are selected, both property sections share one vibrational Hessian workflow.\nUse an insulating, gapped structure with integer occupations. Inspect Berry-phase polarization branch continuity for IR. FULLY_PERIODIC controls Hessian rotations and is retained as explicitly configured, not enabled automatically. Periodic Raman support is experimental; verify CP2K build capabilities and numerical response/intensity convergence. No numerical intensity calculation has been performed by Studio.\n', 'vib.periodic_export_notes'),
         # core/vibrational.py:126
         QCoreApplication.translate("CP2KStudio", 'VIBRATIONAL_ANALYSIS: A periodic cell is used with FULLY_PERIODIC F. CP2K will handle rotational modes accordingly. Consider whether FULLY_PERIODIC T is appropriate for the system.', 'vib.periodic_info'),
-        # ui/vibrational_panel.py:189
+        # ui/vibrational_panel.py:194
         QCoreApplication.translate("CP2KStudio", 'Periodic IR: Intensities are computed using Berry-phase dipole moments.', 'vib.periodic_ir_hint'),
-        # ui/vibrational_panel.py:197
+        # ui/vibrational_panel.py:202
         QCoreApplication.translate("CP2KStudio", 'Experimental periodic intensities require an insulating Gamma-point supercell. Verify the electronic gap, response convergence and CP2K runtime support; XML validity alone does not establish a successful spectrum calculation.', 'vib.periodic_note'),
         # ui/vibrational_panel.py:44
         QCoreApplication.translate("CP2KStudio", 'This feature depends on CP2K periodic linear response. Start with an insulating Gamma-point supercell and verify polarizability-response and intensity convergence. Support is experimental: XML syntax checks do not verify runtime success or the capabilities of the selected CP2K build.', 'vib.periodic_raman_help'),
-        # ui/vibrational_panel.py:191
+        # ui/vibrational_panel.py:196
         QCoreApplication.translate("CP2KStudio", 'Periodic Raman: Polarizability response uses the periodic Berry-phase dipole operator.', 'vib.periodic_raman_hint'),
-        # ui/vibrational_panel.py:84
+        # ui/vibrational_panel.py:89
         QCoreApplication.translate("CP2KStudio", 'TC_PRESSURE', 'vib.pressure_label'),
         # core/vibrational.py:85
         QCoreApplication.translate("CP2KStudio", 'VIBRATIONAL_ANALYSIS: the final INP does not match the selected {mode} / PERIODIC {periodic} workflow. Check INTENSITIES, FULLY_PERIODIC, Quickstep/GPW, boundary settings and the required molecular or Berry-phase property operator.', 'vib.property_path_error'),
         # ui/vibrational_panel.py:34
         QCoreApplication.translate("CP2KStudio", 'Raman Intensities', 'vib.raman'),
-        # ui/vibrational_panel.py:199
+        # ui/vibrational_panel.py:204
         QCoreApplication.translate("CP2KStudio", 'Raman: isolated closed-shell molecules with OT and no smearing/ADDED_MOS. POLAR and DO_RAMAN are activated; response convergence still requires a CP2K run.', 'vib.raman_note'),
         # core/vibrational.py:104
         QCoreApplication.translate("CP2KStudio", 'VIBRATIONAL_ANALYSIS / Raman: the implemented workflow requires closed-shell OT, no smearing and no ADDED_MOS. Other linear-response configurations are not supported by Studio.', 'vib.raman_solver_error'),
@@ -1995,11 +1995,11 @@ def catalog_sources():
         QCoreApplication.translate("CP2KStudio", 'VIBRATIONAL_ANALYSIS: EPS_SCF is greater than 1E-7. Consider tightening SCF convergence and test DX and grid convergence for reliable finite-difference frequencies.', 'vib.scf_warning'),
         # core/vibrational.py:99
         QCoreApplication.translate("CP2KStudio", 'VIBRATIONAL_ANALYSIS: Ensure the structure is sufficiently optimized, and check residual forces and imaginary frequencies.', 'vib.stationary_info'),
-        # ui/vibrational_panel.py:83
+        # ui/vibrational_panel.py:88
         QCoreApplication.translate("CP2KStudio", 'TC_TEMPERATURE', 'vib.temperature_label'),
         # core/vibrational.py:122
         QCoreApplication.translate("CP2KStudio", 'VIBRATIONAL_ANALYSIS / THERMOCHEMISTRY: only an isolated gas-phase molecule with FULLY_PERIODIC F is supported.', 'vib.thermo_error'),
-        # ui/vibrational_panel.py:82
+        # ui/vibrational_panel.py:87
         QCoreApplication.translate("CP2KStudio", 'THERMOCHEMISTRY', 'vib.thermo_label'),
         # core/vibrational.py:124
         QCoreApplication.translate("CP2KStudio", 'VIBRATIONAL_ANALYSIS / THERMOCHEMISTRY: confirm the isolated gas-phase harmonic approximation is appropriate; the application cannot infer this from the coordinates.', 'vib.thermo_warning'),

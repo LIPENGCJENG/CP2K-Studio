@@ -30,7 +30,7 @@ def spectra_project(vib_project):
 def test_new_defaults_and_serialization_have_switches_without_mode():
     config = Project().vibrational
     assert not config.ir_enabled and not config.raman_enabled and not config.intensities
-    assert config.dx == .01 and config.nproc_rep == 4 and not config.fully_periodic
+    assert config.dx == .01 and config.nproc_rep == 1 and not config.fully_periodic
     assert config.linres_eps == 1e-7 and config.linres_max_iter == 200
     assert not {'mode', 'intensities', 'enabled_spectra', 'spectra_label'} & config.model_dump().keys()
     assert config.model_dump()['ir_enabled'] is False and config.model_dump()['raman_enabled'] is False

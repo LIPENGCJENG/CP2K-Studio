@@ -15,7 +15,7 @@ XYZ 现已增加周期 IR/Raman 路径：IR 使用 MOMENTS/PERIODIC T，MAX_MOME
 ## 参数与检查
 
 - DX 默认 `0.01`，使用 CP2K 原生单位 **bohr**；不将结构坐标的 Å 单位套用于位移。
-- NPROC_REP 默认 `4`，是**每副本的 MPI 进程数**，不是副本数量。必须为正整数、不超过第 07 页的 MPI 总进程数并整除该总数。OpenMP 线程不计入此关系。CP2K 会调整不均匀的副本划分；Studio 要求整除，以保持用户请求和实际分配一致。标签旁的信息图标说明 16 个 MPI 进程下的 4/8/16 设置示例及并行副本的内存建议，支持中英文。旧项目缺少字段时采用 4；项目或预设已保存的数值（包括 1）保留。MPI 总数改为 1/2 等不兼容配置时会报告错误，不自动调整任何并行参数。
+- NPROC_REP 默认 `1`，是**每副本的 MPI 进程数**，不是副本数量。必须为正整数、不超过第 07 页的 MPI 总进程数并整除该总数。OpenMP 线程不计入此关系。CP2K 会调整不均匀的副本划分；Studio 要求整除，以保持用户请求和实际分配一致。标签旁的红色圆形感叹号仅作帮助标记，不代表配置错误；Tooltip 说明 16 个 MPI 进程下的 4/8/16 设置示例及并行副本的内存建议，支持中英文。旧项目缺少字段时采用 1；项目或预设已保存的数值保留。OpenMP-only 时 NPROC_REP 必须为 1。手动填写的 NPROC_REP 与 MPI 总数不兼容时会报告错误，不自动调整任何并行参数，也不根据 Studio 所在操作系统锁定参数。
 - PROC_DIST_TYPE 支持 BLOCKED / INTERLEAVED。
 - FULLY_PERIODIC 默认关闭，保持手动选择。其含义是保留 Hessian 中的转动自由度，不是设置晶胞周期性；周期晶胞使用 FULLY_PERIODIC F 时给出 Info，不计入警告或阻止导出，不自动开启。
 - INTENSITIES 从 `ir_enabled or raman_enabled` 推导；界面已移除重复的只读 INTENSITIES 控件。两个强度开关默认均关闭。
@@ -56,7 +56,7 @@ EPS_SCF 仅在严格大于 `1E-7` 时产生 Warning；等于或小于该值不�
 - 测试：新增 `tests/test_vibrational.py`、`tests/test_vibrational_ui.py` 及官方 Raman 输入夹具；更新 `tests/conftest.py`、`tests/test_navigation_order.py` 和夹具说明。
 - 说明：`README.md` 与本文。运行脚本生成器、现有结构/基组数据库解析及 3D 渲染器未改动。
 
-## NPROC_REP 默认值与帮助图标调整
+## NPROC_REP 默认值与帮助图标调整（早期记录）
 
 本次仅在 `core/models.py` 把默认值改为整数 4，并在 `ui/vibrational_panel.py` 的原标签旁复用 16px HelpIcon。使用水平标签行，按图标与标签的高度差补偿原标签/输入框间距，保持输入框原有位置；HelpIcon 继续使用深色原生 Tooltip。中英文内容完整包含副本数公式、16 MPI 进程的三种示例及 OOM 建议，实际截图宽度均为 378px，英文高 368px、中文高 319px。
 

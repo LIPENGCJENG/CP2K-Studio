@@ -37,12 +37,24 @@ def test_reject_invalid_parallel_settings(field, value):
 
 def test_default_and_quoted_commands():
     assert run_command(RunEnvironment()) == ('export OMP_NUM_THREADS=1\n'
-        'mpirun -np 16 cp2k.psmp -i input.inp -o output.out')
+        'mpirun -np 1 cp2k.psmp -i input.inp -o output.out')
     name = "folder/input 'special'; $(echo unsafe).inp"
     command = run_command(RunEnvironment(mpi_processes=8, omp_threads=4), name)
     assert command.splitlines()[0] == 'export OMP_NUM_THREADS=4'
     assert shlex.split(command.splitlines()[1]) == ['mpirun', '-np', '8', 'cp2k.psmp', '-i', name, '-o', 'output.out']
     assert str(Path.cwd()) not in command
+
+
+@pytest.mark.parametrize('saved,expected', [
+    ({}, (1, 1)), ({'mpi_processes': 8}, (8, 1)),
+    ({'omp_threads': 3}, (1, 3)), ({'mpi_processes': 16, 'omp_threads': 4}, (16, 4)),
+])
+def test_missing_parallel_fields_use_defaults_without_overwriting_saved_values(tmp_path, saved, expected):
+    path = tmp_path / 'parallel.json'
+    path.write_text(json.dumps({'run_environment': saved}))
+    config = load_project(path).run_environment
+    assert (config.mpi_processes, config.omp_threads) == expected
+    assert config.required_cpu_slots == expected[0] * expected[1]
 
 
 @pytest.mark.parametrize('name', ['/tmp/input.inp', '../input.inp', 'a/../../bad', 'x\ny', 'a\x00b', '', 'a\\b'])
@@ -141,8 +153,8 @@ def test_project_roundtrip_defaults_and_no_scientific_preset_leak(water, tmp_pat
 
 
 @pytest.mark.parametrize('nested', [True, False])
-@pytest.mark.parametrize('total,omp,expected', [(32, 4, (8, 4)), (15, 4, (16, 1)), (0, 1, (16, 1)),
-    (16, 0, (16, 1)), ('32', 2, (16, 1)), (32, None, (16, 1))])
+@pytest.mark.parametrize('total,omp,expected', [(32, 4, (8, 4)), (15, 4, (1, 1)), (0, 1, (1, 1)),
+    (16, 0, (1, 1)), ('32', 2, (1, 1)), (32, None, (1, 1))])
 def test_legacy_migration(tmp_path, nested, total, omp, expected):
     legacy = {'total_cpu_cores': total, 'omp_threads': omp}
     data = {'run_environment': legacy} if nested else legacy

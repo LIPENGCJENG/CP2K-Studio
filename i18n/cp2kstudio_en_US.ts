@@ -4438,9 +4438,10 @@ Click an error below to locate its settings.</translation>
     </message>
     <message>
       <location filename="catalog_sources.py" line="1505" />
-      <source>Legacy runtime resources could not be converted reliably. Using Linux, MPI=16, OpenMP=1; review step 07.</source>
+      <source>Legacy runtime resources could not be converted reliably. Using Linux, MPI=1, OpenMP=1; review step 07.</source>
+      <oldsource>Legacy runtime resources could not be converted reliably. Using Linux, MPI=16, OpenMP=1; review step 07.</oldsource>
       <comment>studio.b08cfdf9dc4df1ce</comment>
-      <translation>Legacy runtime resources could not be converted reliably. Using Linux, MPI=16, OpenMP=1; review step 07.</translation>
+      <translation>Legacy runtime resources could not be converted reliably. Using Linux, MPI=1, OpenMP=1; review step 07.</translation>
     </message>
     <message>
       <location filename="catalog_sources.py" line="1507" />
@@ -4778,7 +4779,24 @@ For a total of 16 MPI processes:
 Recommendations:
 NPROC_REP must be a positive integer and should normally divide the total MPI process count exactly.
 
-Running multiple replicas concurrently may increase total memory use. If an out-of-memory (OOM) error occurs, reduce the total MPI process count, or increase NPROC_REP to reduce the number of concurrent replicas.</source>
+Running multiple replicas concurrently may increase total memory use. If an out-of-memory (OOM) error occurs, reduce the total MPI process count, or increase NPROC_REP to reduce the number of concurrent replicas.
+
+OpenMP-only: NPROC_REP must be 1.</source>
+      <oldsource>NPROC_REP · MPI Parallel Settings
+
+NPROC_REP is the number of MPI processes per vibrational replica, not the total MPI process count.
+
+Number of replicas = total MPI processes ÷ NPROC_REP
+
+For a total of 16 MPI processes:
+• NPROC_REP = 4: 4 replicas, each using 4 MPI processes.
+• NPROC_REP = 8: 2 replicas, each using 8 MPI processes.
+• NPROC_REP = 16: 1 replica using 16 MPI processes.
+
+Recommendations:
+NPROC_REP must be a positive integer and should normally divide the total MPI process count exactly.
+
+Running multiple replicas concurrently may increase total memory use. If an out-of-memory (OOM) error occurs, reduce the total MPI process count, or increase NPROC_REP to reduce the number of concurrent replicas.</oldsource>
       <comment>vib.nproc_help</comment>
       <translation>NPROC_REP · MPI Parallel Settings
 
@@ -4794,7 +4812,9 @@ For a total of 16 MPI processes:
 Recommendations:
 NPROC_REP must be a positive integer and should normally divide the total MPI process count exactly.
 
-Running multiple replicas concurrently may increase total memory use. If an out-of-memory (OOM) error occurs, reduce the total MPI process count, or increase NPROC_REP to reduce the number of concurrent replicas.</translation>
+Running multiple replicas concurrently may increase total memory use. If an out-of-memory (OOM) error occurs, reduce the total MPI process count, or increase NPROC_REP to reduce the number of concurrent replicas.
+
+OpenMP-only: NPROC_REP must be 1.</translation>
     </message>
     <message>
       <location filename="catalog_sources.py" line="1957" />
